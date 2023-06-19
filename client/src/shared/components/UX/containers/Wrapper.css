@@ -1,0 +1,57 @@
+.wrapper {
+  padding-left: 300px;
+  position: relative;
+  min-height: 100vh;
+  z-index: 1;
+}
+
+.bg-lines {
+  left: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+.bg-lines,
+.bg-lines span {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  min-height: 100vh;
+}
+
+.bg-lines span {
+  background: var(--bg-lines-color-dark);
+  display: inline-block;
+  left: 0;
+  width: 1px;
+}
+
+.bg-lines span:first-child {
+  left: 20%;
+}
+
+.bg-lines span:nth-child(2) {
+  left: 40%;
+}
+
+.bg-lines span:nth-child(3) {
+  left: 60%;
+}
+
+.bg-lines span:nth-child(4) {
+  left: 80%;
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1599px) {
+  .bg-lines {
+    left: 260px;
+    width: calc(100% - 260px);
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .bg-lines {
+    left: 0;
+    width: 100%;
+  }
+}
