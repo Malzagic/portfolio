@@ -1,8 +1,19 @@
+.portfolio-cards {
+	display: flex;
+	flex-direction: column;
+	padding: 0.5em;
+	background-color: #fff;
+	color: #000;
+	border-radius: 10px;
+	box-shadow: 10px 10px 10px rgba(0,0,0,.3);
+}
+
 .card {
 	position: relative;
+	display: flex;
 	flex-grow: .8;
-	height: 600px;
-	margin: 4px;
+	margin: 5px;
+	width: 100%;
 	border-radius: 10px;
 	background-size: cover;
 	background-position: center;
@@ -18,4 +29,54 @@
 	height: 100%;
 	background-color: rgba(0,0,0,.4);
 	transition: opacity .5s;
+}
+
+.card-text {
+	width: 100%;
+	padding: 1rem;
+	z-index: 1;
+}
+
+.card-text h2 {
+	text-transform: uppercase;
+}
+
+.card-text p {
+	display: none;
+	opacity: 0;
+	font-size: 1.6rem;
+}
+
+
+.active-text {
+	flex-grow: 8;
+}
+
+.active-text .card-text {
+	animation: show-bg 1s 0.6s forwards;
+}
+
+.active-text .card-text h2 {
+	display: none;
+}
+
+.active-text .card-text p {
+	display: block;
+	animation: show-text 1s 0.2s forwards;
+}
+
+.card.active-text::after {
+	opacity: 0;
+}
+
+@keyframes show-bg {
+	to {
+		background-color: rgba(0,0,0,.4);
+	}
+}
+
+@keyframes show-text {
+	to {
+		opacity: 1;
+	}
 }
