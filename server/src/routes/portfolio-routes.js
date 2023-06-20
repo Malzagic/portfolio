@@ -20,10 +20,8 @@ router.get('/', (req, res, next) => {
 
     axios.request(options).then((response) => {
         const repositories = response.data;
-
         res.status(200).json(repositories.items)
     }).catch((error) => {
-        res.statusCode();
         console.error(error)
     })
 });

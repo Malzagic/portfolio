@@ -24,7 +24,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  content: "Download CV";
+  content: "";
   color: var(--border-color-dark);
   background-color: var(--secondary-color-dark);
   transform-origin: right;
