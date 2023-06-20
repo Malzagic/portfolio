@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import Container from "../../shared/components/UX/containers/Container";
+import { BallTriangle } from 'react-loader-spinner'
 
 import './Portfolio.css';
 
@@ -10,6 +11,7 @@ const Portfolio = () => {
   const [repositories, setRepositories] = useState(repos[0]);
   const [active, setActive] = useState('');
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const fetchData = async () => {
     try {
@@ -24,34 +26,48 @@ const Portfolio = () => {
   };
 
   useEffect(() => {
-
     fetchData()
+    // eslint-disable-next-line
   }, [repositories]);
 
 
   const handleClick = (e) => {
     const repository = e.target.getAttribute('data-value');
-    console.log(repository)
-    // setActive(repository);
-    // setRepositories(repository);
+
+    setLoading(true);
+    setRepositories(repository);
+
+    setTimeout(() => {
+      setActive(repository);
+      setLoading(false);
+    }, 600)
   }
 
   console.log(data)
-
   return (
     <section className="portfolio">
       <Container>
         <div className="portfolio-cards">
-          <div className="card">
-            {repos.map(items => (
-              <>
-                <h2 onClick={handleClick} data-value={items}>Project name: <span data-value={items}>{items.toUpperCase()}</span></h2>
-                <div className="card-items">
-
-                </div>
-              </>
-            ))}
-          </div>
+          {repos.map(items => (
+            <div key={items.length} className="card">
+              <h2 onClick={handleClick} data-value={items}>Project name: <span data-value={items}>{items.toUpperCase()}</span></h2>
+              <div className={`card-item ${active !== items ? '' : 'active-card'}`}>
+                <BallTriangle
+                  height={100}
+                  width={100}
+                  radius={5}
+                  color="#000"
+                  ariaLabel="ball-triangle-loading"
+                  wrapperClass={{}}
+                  wrapperStyle=""
+                  visible={loading}
+                />
+                <ul>
+                  <li>{data.git_url}</li>
+                </ul>
+              </div>
+            </div>
+          ))}
         </div>
       </Container>
     </section>

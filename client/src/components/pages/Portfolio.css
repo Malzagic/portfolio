@@ -1,5 +1,6 @@
 .portfolio-cards {
 	display: flex;
+	flex-direction: column;
 	padding: 0.5em;
 	background-color: #fff;
 	color: #000;
@@ -24,4 +25,12 @@
 	width: 100%;
 	padding: 0.5rem;
 	margin: 5px;
+}
+
+.card-item{
+	display: none;
+}
+
+.active-card {
+	display: block;
 }

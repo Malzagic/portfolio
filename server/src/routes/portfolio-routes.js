@@ -7,7 +7,7 @@ const token = process.env.REACT_GITHUB_TOKEN;
 
 
 router.get('/', (req, res, next) => {
-    const repo = req.repo || 'portfolio';
+    const repo = req.repo;
 
     const options = {
         method: 'GET',
