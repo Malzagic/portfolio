@@ -14,7 +14,7 @@ router.get('/', (req, res, next) => {
         url: `https://api.github.com/search/repositories?q=user:malzagic+${repo.toLowerCase()}`,
         header: {
             "Accept": "application/vnd.github+json",
-            "Authorization": "Bearer" + " " + token,
+            "Authorization": `Bearer ${token}`,
         }
     }
 

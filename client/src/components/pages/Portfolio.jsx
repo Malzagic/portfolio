@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import Container from "../../shared/components/UX/containers/Container";
-import { BallTriangle } from 'react-loader-spinner'
+import { Oval} from 'react-loader-spinner'
 
 import './Portfolio.css';
 
@@ -9,41 +9,35 @@ const Portfolio = () => {
   const repos = ['portfolio', 'Feedback-UI', 'Github-Finder', 'ReactWeather-app', 'Track_calories', 'calculate-car-excise'];
 
   const [repositories, setRepositories] = useState(repos[0]);
-  const [active, setActive] = useState('');
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [active, setActive] = useState(repos[0]);
+  const [data, setData] = useState({});
+  const [loading, setLoading] = useState(false);
 
-  const fetchData = async () => {
+  const fetchData = async (repo) => {
     try {
       const url = `http://localhost:8000/portfolio/`;
-      const response = await axios.get(url + repositories);
+      const response = await axios.get(url + repo);
       const jsonData = await response.data;
 
-      setData(jsonData[0]);
+      setLoading(false);
+      setData(jsonData[0])
     } catch (error) {
       console.error(error);
     }
   };
 
   useEffect(() => {
-    fetchData()
-    // eslint-disable-next-line
-  }, [repositories]);
-
+    fetchData(repositories)
+  }, [repositories])
 
   const handleClick = (e) => {
     const repository = e.target.getAttribute('data-value');
 
-    setLoading(true);
-    setRepositories(repository);
-
-    setTimeout(() => {
-      setActive(repository);
-      setLoading(false);
-    }, 600)
+    setRepositories(repository)
+    setActive(repository);
+    setLoading(true)
   }
 
-  console.log(data)
   return (
     <section className="portfolio">
       <Container>
@@ -52,19 +46,21 @@ const Portfolio = () => {
             <div key={items.length} className="card">
               <h2 onClick={handleClick} data-value={items}>Project name: <span data-value={items}>{items.toUpperCase()}</span></h2>
               <div className={`card-item ${active !== items ? '' : 'active-card'}`}>
-                <BallTriangle
-                  height={100}
-                  width={100}
-                  radius={5}
-                  color="#000"
-                  ariaLabel="ball-triangle-loading"
-                  wrapperClass={{}}
-                  wrapperStyle=""
+                <Oval
+                  color="#333"
+                  wrapperStyle={{}}
+                  wrapperClass="card-loader"
                   visible={loading}
+                  ariaLabel='oval-loading'
+                  secondaryColor="#000"
+                  strokeWidth={3}
+                  strokeWidthSecondary={3}
                 />
-                <ul>
-                  <li>{data.git_url}</li>
-                </ul>
+                {!loading &&
+                  <ul>
+                    <li>{data.name}</li>
+                  </ul>
+                }
               </div>
             </div>
           ))}
