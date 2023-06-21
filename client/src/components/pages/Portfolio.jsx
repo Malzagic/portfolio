@@ -28,6 +28,7 @@ const Portfolio = () => {
 
   useEffect(() => {
     fetchData(repositories)
+    setLoading(true);
   }, [repositories])
 
   const handleClick = (e) => {
