@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
+import {
+  Link
+} from "react-router-dom";
 import axios from 'axios';
 import Container from "../../shared/components/UX/containers/Container";
-import { Oval} from 'react-loader-spinner'
+import { Oval} from 'react-loader-spinner';
 
 import './Portfolio.css';
 
@@ -39,6 +42,7 @@ const Portfolio = () => {
     setLoading(true)
   }
 
+  console.log(data)
   return (
     <section className="portfolio">
       <Container>
@@ -48,7 +52,7 @@ const Portfolio = () => {
               <h2 onClick={handleClick} data-value={items}>Project name: <span data-value={items}>{items.toUpperCase()}</span></h2>
               <div className={`card-item ${active !== items ? '' : 'active-card'}`}>
                 <Oval
-                  color="#333"
+                  color="#fff"
                   wrapperStyle={{}}
                   wrapperClass="card-loader"
                   visible={loading}
@@ -58,9 +62,12 @@ const Portfolio = () => {
                   strokeWidthSecondary={3}
                 />
                 {!loading &&
-                  <ul>
-                    <li>{data.name}</li>
-                  </ul>
+                  <div className="">
+                    <h3>test</h3>
+                    <Link to={data.html_url}>Github</Link>
+                    <Link to={data.homepage}>Live</Link>
+                    <p>{data.language}</p>
+                  </div>
                 }
               </div>
             </div>
