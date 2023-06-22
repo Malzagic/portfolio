@@ -3,14 +3,19 @@ import Container from "../../shared/components/UX/containers/Container";
 import Row from "../../shared/components/UX/containers/Row";
 import Grid from "../../shared/components/UX/containers/Grid";
 import Col from "../../shared/components/UX/containers/Col";
+import LinkButton from "../../shared/components/UX/buttons/LinkButton";
+import Tiles from "../../shared/components/UX/tilesbox/Tiles";
+import SectionTitle from "../../shared/components/UX/sectionTitles/SectionTitle";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faReact, faHtml5, faCss3Alt, faJs, faSass, faGit, faNodeJs, faBootstrap, faMdb, faNpm } from "@fortawesome/free-brands-svg-icons";
 
 import my_picture from '../../assets/Instagram-1.jpg';
 import './About.css'
-import LinkButton from "../../shared/components/UX/buttons/LinkButton";
-import Tiles from "../../shared/components/UX/tilesbox/Tiles";
-import SectionTitle from "../../shared/components/UX/sectionTitles/SectionTitle";
+
+
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
+AOS.init();
 
 const About = () => {
 
@@ -21,7 +26,7 @@ const About = () => {
   return (
     <section className="about-me">
       <Container>
-        <div className="about-area">
+        <div className="about-area" data-aos="fade-right">
           <SectionTitle title='About' />
           <Row>
             <div className="about-image">
@@ -61,7 +66,7 @@ const About = () => {
         </div>
       </Container>
       <Container>
-        <div className="skills-area">
+        <div className="skills-area" data-aos="fade-right">
           <SectionTitle title='Services' />
           <Row>
             <Tiles
@@ -80,7 +85,7 @@ const About = () => {
         </div>
       </Container>
       <Container>
-        <div className="skills-area">
+        <div className="skills-area" data-aos="fade-right">
           <SectionTitle title='Skills' />
           <Grid>
             <Col title={"React"}><FontAwesomeIcon icon={faReact} className="mt2 fs-3" /></Col>

@@ -2,16 +2,21 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import Container from "../../shared/components/UX/containers/Container";
+import SectionTitle from "../../shared/components/UX/sectionTitles/SectionTitle";
 
 import './Resume.css';
-import SectionTitle from "../../shared/components/UX/sectionTitles/SectionTitle";
+
+
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
+AOS.init();
 
 const Resume = () => {
   return (
     <section className="resume">
       <Container>
         <SectionTitle title='Work Experience' />
-        <div className="resume-wrapper">
+        <div className="resume-wrapper" data-aos="fade-right">
           <div className="resume-box">
             <div className="resume-summary">
               <h6 className="resume-summary-title">2018 - Presents</h6>
@@ -34,7 +39,7 @@ const Resume = () => {
           </div>
         </div>
         <SectionTitle title='Education & Qualifications' className={'mt-2'} />
-        <div className="resume-wrapper">
+        <div className="resume-wrapper" data-aos="fade-right">
           <div className="resume-box">
             <div className="resume-summary">
               <h6 className="resume-summary-title">2010/2011 - Presents</h6>

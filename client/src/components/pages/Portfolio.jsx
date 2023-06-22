@@ -14,6 +14,10 @@ import calculateCarExcise from '../../assets/github-projects/calculate-car-excis
 
 import './Portfolio.css';
 
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
+AOS.init();
+
 const Portfolio = () => {
   const repos = ['portfolio', 'Feedback-UI', 'Github-Finder', 'ReactWeather-app', 'Track_calories', 'calculate-car-excise'];
   const reposImg = [portfolio, feedbackUI, githubFinder, reactWeatherApp, trackCalories, calculateCarExcise];
@@ -51,14 +55,13 @@ const Portfolio = () => {
     setLoading(true)
   }
 
-  console.log(data)
   return (
     <section className="portfolio">
       <Container>
-        <div className="portfolio-cards">
+        <div className="portfolio-cards" data-aos="fade-right">
           {repos.map((items, index) => (
             <div key={index} className="card">
-              <h2 onClick={handleClick} data-value={items}>Project name: <span data-value={items}>{items.toUpperCase()}</span></h2>
+              <h2 onClick={handleClick} data-value={items}>{items.replace(/[^a-zA-Z0-9 ]/g, ' ').toUpperCase()}</h2>
               <div className={`card-item ${active !== items ? '' : 'active-card'}`}>
                 <Oval
                   color="#fff"

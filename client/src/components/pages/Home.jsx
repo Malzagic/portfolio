@@ -6,14 +6,17 @@ import { faFacebookF } from '@fortawesome/free-brands-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 
-
 import './Home.css';
+
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
+AOS.init();
 
 const Home = () => {
   const text = "Przemysław Młoczkowski";
 
   return (
-      <header className="main-header">
+      <header className="main-header" data-aos="fade-right">
         <Container>
           <h1 className="header-title">
             Hi, I am 
