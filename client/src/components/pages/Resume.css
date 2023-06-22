@@ -108,6 +108,9 @@
 
 
 @media screen and (max-width: 768px) {
+  .resume {
+    padding-top: 3rem;
+  }
   .resume-box {
     display: block;
   }

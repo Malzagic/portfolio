@@ -51,7 +51,7 @@ const Portfolio = () => {
     setLoading(true)
   }
 
-  console.log(userData)
+  console.log(data)
   return (
     <section className="portfolio">
       <Container>
@@ -78,11 +78,15 @@ const Portfolio = () => {
                     <div className="item-text">
                       <h3>Author: {userData.login}</h3>
                       <div className="item-links">
-                        <Link className="portfolio-link portfolio-btn" to={userData.html_url}>Github</Link>
-                        <Link className="portfolio-link portfolio-btn" to={data.html_url}>Code</Link>
-                        <Link className="portfolio-link portfolio-btn" to={data.homepage}>Live</Link>
+                        <Link className="portfolio-link portfolio-btn" to={userData.html_url} target="_blank">Github</Link>
+                        <Link className="portfolio-link portfolio-btn" to={data.html_url} target="_blank">Code</Link>
+                        <Link className="portfolio-link portfolio-btn" to={data.homepage} target="_blank">Live</Link>
                       </div>
                       <p>Languages used: {data.language}</p>
+                      <div className="item-description">
+                        <h4>Description:</h4>
+                        <p>{data.description}</p>
+                      </div>
                     </div>
                   </div>
                 }
