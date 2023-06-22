@@ -1,8 +1,27 @@
 import React from "react";
+import Container from '../../shared/components/UX/containers/Container';
+import SectionTitle from "../../shared/components/UX/sectionTitles/SectionTitle";
+
+import './Contact.css';
 
 const Contact = () => {
   return (
-    <h1>Work in progress...</h1>
+    <section>
+      <Container>
+        <SectionTitle title='Contact' />
+        <form action="" className="contact-form">
+          <label htmlFor="name">Name</label>
+          <input type="text" id="name"/>
+          <label htmlFor="surname">Surname</label>
+          <input type="text" id="surname"/>
+          <label htmlFor="email">Email</label>
+          <input type="email" id="email"/>
+          <label htmlFor="message">Message</label>
+          <textarea name="message" id="message" cols="50" rows="10" />
+          <input type="submit" value={'submit'}/>
+        </form>
+      </Container>
+    </section>
   )
 }
 

@@ -27,7 +27,7 @@ const About = () => {
     <section className="about-me">
       <Container>
         <div className="about-area" data-aos="fade-right">
-          <SectionTitle title='About' />
+        <SectionTitle title='About' />
           <Row>
             <div className="about-image">
               <img src={my_picture} alt="myself portrait" />

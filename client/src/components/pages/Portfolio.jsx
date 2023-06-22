@@ -4,6 +4,7 @@ import {
 } from "react-router-dom";
 import axios from 'axios';
 import Container from "../../shared/components/UX/containers/Container";
+import SectionTitle from "../../shared/components/UX/sectionTitles/SectionTitle";
 import { Oval } from 'react-loader-spinner';
 import portfolio from '../../assets/github-projects/portfolio.png';
 import feedbackUI from '../../assets/github-projects/Feedback-UI.png';
@@ -15,7 +16,7 @@ import calculateCarExcise from '../../assets/github-projects/calculate-car-excis
 import './Portfolio.css';
 
 import AOS from 'aos';
-import 'aos/dist/aos.css'; 
+import 'aos/dist/aos.css';
 AOS.init();
 
 const Portfolio = () => {
@@ -58,6 +59,7 @@ const Portfolio = () => {
   return (
     <section className="portfolio">
       <Container>
+        <SectionTitle title='Portfolio' />
         <div className="portfolio-cards" data-aos="fade-right">
           {repos.map((items, index) => (
             <div key={index} className="card">
