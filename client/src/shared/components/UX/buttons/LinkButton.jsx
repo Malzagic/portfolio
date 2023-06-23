@@ -4,7 +4,7 @@ import './LinkButton.css';
 
 const LinkButton = (props) => {
   return (
-    <a className={props.className + ' btn'} href={props.link}>{props.text}</a>
+    <a className={props.className ? props.className + " " + "btn" : '' + 'btn'} href={props.link} target={props.target}>{props.text}</a>
   )
 }
 

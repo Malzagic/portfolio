@@ -5,6 +5,7 @@ import {
 import axios from 'axios';
 import Container from "../../shared/components/UX/containers/Container";
 import SectionTitle from "../../shared/components/UX/sectionTitles/SectionTitle";
+import LinkButton from '../../shared/components/UX/buttons/LinkButton';
 import { Oval } from 'react-loader-spinner';
 import portfolio from '../../assets/github-projects/portfolio.png';
 import feedbackUI from '../../assets/github-projects/Feedback-UI.png';
@@ -95,27 +96,24 @@ const Portfolio = () => {
                     <div className="item-text">
                       <h3>Author: {userData.login}</h3>
                       <div className="item-links">
-                        <Link
-                          className="portfolio-link portfolio-btn"
-                          to={userData.html_url}
+                        <LinkButton
+                          className="portfolio-btn"
+                          link={userData.html_url}
                           target="_blank"
-                        >
-                          Github
-                        </Link>
-                        <Link
-                          className="portfolio-link portfolio-btn"
-                          to={data.html_url}
+                          text={'Github'}
+                        />
+                        <LinkButton
+                          className="portfolio-btn"
+                          link={data.html_url}
                           target="_blank"
-                        >
-                          Code
-                        </Link>
-                        <Link
-                          className="portfolio-link portfolio-btn"
-                          to={data.homepage}
+                          text={'Code'}
+                        />
+                        <LinkButton
+                          className="portfolio-btn"
+                          link={data.homepage}
                           target="_blank"
-                        >
-                          Live
-                        </Link>
+                          text={'Live'}
+                        />
                       </div>
                       <p>Languages used: {data.language}</p>
                       <div className="item-description">

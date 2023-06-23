@@ -2,10 +2,8 @@
 	display: flex;
 	flex-direction: column;
 	padding: 0.5em;
-	background-color: var(--secondary-background-color-rgb-dark);
 	color: var(--secondary-color-dark);
 	border-radius: 10px;
-	box-shadow: 10px 10px 10px rgba(0,0,0,.3);
 }
 
 .card {
@@ -36,19 +34,8 @@
 }
 
 .portfolio-btn {
-	display: inline-block;
-	text-align: center;
 	width: 100%;
-	padding: 0.5rem 1rem;
 	margin: 5px;
-	border: 2px solid var(--secondary-background-color-rgb-dark);
-	border-radius: 10px;
-	transition: all .3s ease-in-out;
-}
-
-.portfolio-btn:hover {
-	background-color: var(--secondary-background-color-rgb-dark);
-	box-shadow: 10px 10px 10px rgba(0,0,0,.3);
 }
 
 .card-item{

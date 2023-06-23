@@ -14,7 +14,7 @@ import './About.css'
 
 
 import AOS from 'aos';
-import 'aos/dist/aos.css'; 
+import 'aos/dist/aos.css';
 AOS.init();
 
 const About = () => {
@@ -27,10 +27,12 @@ const About = () => {
     <section className="about-me">
       <Container>
         <div className="about-area" data-aos="fade-right">
-        <SectionTitle title='About' />
+          <SectionTitle title='About' />
           <Row>
             <div className="about-image">
-              <img src={my_picture} alt="myself portrait" />
+              <div className="image-box">
+                <img src={my_picture} alt="myself portrait" />
+              </div>
             </div>
             <div className="about-content">
               <h3 className="content-title">
