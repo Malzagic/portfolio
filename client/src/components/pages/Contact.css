@@ -7,12 +7,35 @@
     border-radius: 10px;
 }
 
+.contact-form label {
+    text-align: center;
+}
+
 .contact-form input {
+    color: var(--secondary-color-dark);
+    border: 1px solid var(--secondary-background-color-rgb-dark);
     border-radius: 10px;
     background-color: inherit;
+    margin: 1rem;
+    padding: 0.5rem 1rem;
+}
+
+.contact-form input:focus-visible {
+    outline-style: groove;
+    outline-color: var(--bg-lines-color-dark);
+    box-shadow: 0px 0px 10px var(--secondary-color-dark);
 }
 
 .contact-form textarea {
+    color: var(--secondary-color-dark);
     border-radius: 10px;
     background-color: inherit;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.contact-form textarea:focus-visible {
+    outline-style: groove;
+    outline-color: var(--bg-lines-color-dark);
+    box-shadow: 0px 0px 10px var(--secondary-color-dark);
 }
