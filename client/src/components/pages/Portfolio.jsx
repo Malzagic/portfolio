@@ -25,6 +25,7 @@ const Portfolio = () => {
 
   const [repositories, setRepositories] = useState(repos[0]);
   const [active, setActive] = useState(repos[0]);
+  const [isClicked, setIsClicked] = useState('');
   const [data, setData] = useState({});
   const [userData, setUserData] = useState({});
   const [loading, setLoading] = useState(false);
@@ -50,6 +51,7 @@ const Portfolio = () => {
 
   const handleClick = (e) => {
     const repository = e.target.getAttribute('data-value');
+    if(repository === isClicked) return;
 
     setRepositories(repository)
     setActive(repository);
@@ -63,7 +65,17 @@ const Portfolio = () => {
         <div className="portfolio-cards" data-aos="fade-right">
           {repos.map((items, index) => (
             <div key={index} className="card">
-              <h2 onClick={handleClick} data-value={items}>{items.replace(/[^a-zA-Z0-9 ]/g, ' ').toUpperCase()}</h2>
+              <h2
+                onClick={(e) => {
+                  handleClick(e)
+                  setIsClicked(e.target.getAttribute('data-value'));
+                }}
+                data-value={items}
+              >
+                {
+                  items.replace(/[^a-zA-Z0-9 ]/g, ' ').toUpperCase()
+                }
+              </h2>
               <div className={`card-item ${active !== items ? '' : 'active-card'}`}>
                 <Oval
                   color="#fff"
@@ -83,9 +95,27 @@ const Portfolio = () => {
                     <div className="item-text">
                       <h3>Author: {userData.login}</h3>
                       <div className="item-links">
-                        <Link className="portfolio-link portfolio-btn" to={userData.html_url} target="_blank">Github</Link>
-                        <Link className="portfolio-link portfolio-btn" to={data.html_url} target="_blank">Code</Link>
-                        <Link className="portfolio-link portfolio-btn" to={data.homepage} target="_blank">Live</Link>
+                        <Link
+                          className="portfolio-link portfolio-btn"
+                          to={userData.html_url}
+                          target="_blank"
+                        >
+                          Github
+                        </Link>
+                        <Link
+                          className="portfolio-link portfolio-btn"
+                          to={data.html_url}
+                          target="_blank"
+                        >
+                          Code
+                        </Link>
+                        <Link
+                          className="portfolio-link portfolio-btn"
+                          to={data.homepage}
+                          target="_blank"
+                        >
+                          Live
+                        </Link>
                       </div>
                       <p>Languages used: {data.language}</p>
                       <div className="item-description">
