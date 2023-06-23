@@ -10,8 +10,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faReact, faHtml5, faCss3Alt, faJs, faSass, faGit, faNodeJs, faBootstrap, faMdb, faNpm } from "@fortawesome/free-brands-svg-icons";
 
 import my_picture from '../../assets/Instagram-1.jpg';
+import cv from '../../assets/cv/Frontend Developer -CVENG.pdf'
 import './About.css'
-
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -62,7 +62,7 @@ const About = () => {
                   Available
                 </li>
               </ul>
-              <LinkButton text={"Download CV"} />
+              <LinkButton link={cv} text={"Download CV"} get={true}/>
             </div>
           </Row>
         </div>
