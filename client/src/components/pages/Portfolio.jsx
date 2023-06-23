@@ -25,7 +25,7 @@ const Portfolio = () => {
 
   const [repositories, setRepositories] = useState(repos[0]);
   const [active, setActive] = useState(repos[0]);
-  const [isClicked, setIsClicked] = useState('');
+  const [isClicked, setIsClicked] = useState(repos[0]);
   const [data, setData] = useState({});
   const [userData, setUserData] = useState({});
   const [loading, setLoading] = useState(false);
