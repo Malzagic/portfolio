@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from 'axios';
 import Container from '../../shared/components/UX/containers/Container';
 import SectionTitle from "../../shared/components/UX/sectionTitles/SectionTitle";
 
@@ -13,36 +14,55 @@ const Contact = () => {
   const [nameValue, setNameValue] = useState('');
   const [surnameValue, setSurnameValue] = useState('');
   const [emailValue, setEmailValue] = useState('');
-  const [messangeValue, setMessangeValue] = useState('');
+  const [messageValue, setMessageValue] = useState('');
 
-  const sendEmailHandler = (e) => {
+  const sendEmailHandler = async (e) => {
     e.preventDefault();
 
     const formData = {
       name: nameValue,
       surname: surnameValue,
       email: emailValue,
-      messange: messangeValue,
+      message: messageValue,
     }
 
-    console.log(formData);
 
+    try {
+      const url = 'http://localhost:8000/contact';
+      await axios.post(url, JSON.stringify(formData), {
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }).then(res => {
+        if(res.status === 200) {
+          const message = res.data;
+          alert(message.message);
+
+          setNameValue('');
+          setSurnameValue('');
+          setEmailValue('');
+          setMessageValue('');
+        }
+      })
+    } catch (error) {
+      console.error(error)
+    }
   }
 
 
   return (
-    <section>
+    <section className="contact">
       <Container>
         <SectionTitle title='Contact' />
         <form onSubmit={sendEmailHandler} className="contact-form" data-aos="fade-right">
           <label htmlFor="name">Name</label>
-          <input onChange={(e) => setNameValue(e.target.value)} type="text" id="name"/>
+          <input onChange={(e) => setNameValue(e.target.value)} type="text" id="name" value={nameValue} required/>
           <label htmlFor="surname">Surname</label>
-          <input onChange={(e) => setSurnameValue(e.target.value)} type="text" id="surname"/>
+          <input onChange={(e) => setSurnameValue(e.target.value)} type="text" id="surname" value={surnameValue} required/>
           <label htmlFor="email">Email</label>
-          <input onChange={(e) => setEmailValue(e.target.value)}  type="email" id="email"/>
+          <input onChange={(e) => setEmailValue(e.target.value)}  type="email" id="email" value={emailValue} required/>
           <label htmlFor="message">Message</label>
-          <textarea onChange={(e) => setMessangeValue(e.target.value)} name="message" id="message" cols="50" rows="10" required/>
+          <textarea onChange={(e) => setMessageValue(e.target.value)} name="message" id="message" cols="50" rows="10" value={messageValue} required/>
           <input className={'btn sendBtn'} type="submit" value={'Submit'}/>
         </form>
       </Container>
