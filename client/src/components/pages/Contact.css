@@ -15,17 +15,22 @@
     color: var(--secondary-color-dark);
     border: 1px solid var(--secondary-background-color-rgb-dark);
     border-radius: 10px;
-    background-color: inherit;
+    background-color: var(--main-color-dark);
     margin: 1rem;
     padding: 0.5rem 1rem;
 }
+.contact-form input:-webkit-autofill {
+    -webkit-text-fill-color: var(--navigation-background-color-dark);
+    -webkit-box-shadow: 0 0 0px 1000px var(--secondary-color-dark) inset;
+    transition: all .3s ease-in-out;
+}
+
 
 .contact-form input:focus-visible {
     color: var(--navigation-background-color-dark);
     outline-style: groove;
     background-color: var(--secondary-color-dark);
     outline-color: var(--bg-lines-color-dark);
-    box-shadow: 0px 0px 10px var(--secondary-color-dark);
 }
 
 .contact-form textarea {
@@ -34,12 +39,18 @@
     background-color: inherit;
     padding: 1rem;
     margin: 1rem;
+    transition: all .3s ease-in-out;
 }
 
-.contact-form textarea:focus-visible {
+.contact-form textarea:focus,
+.contact-form textarea:valid {
     color: var(--navigation-background-color-dark);
     outline-style: groove;
     background-color: var(--secondary-color-dark);
     outline-color: var(--bg-lines-color-dark);
-    box-shadow: 0px 0px 10px var(--secondary-color-dark);
+}
+
+.sendBtn:hover {
+    color: var(--navigation-background-color-dark);
+    background-color: var(--secondary-color-dark);
 }
