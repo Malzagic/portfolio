@@ -15,6 +15,9 @@ import './Portfolio.css';
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 AOS.init();
 
 const Portfolio = () => {
@@ -39,6 +42,11 @@ const Portfolio = () => {
       setLoading(false);
     } catch (error) {
       console.error(error);
+      if (error.message === 'Network Error') {
+        toast.warn('Error server connection!')
+      } else {
+        toast.error('Something went wrong!')
+      }
     }
   };
 
@@ -49,7 +57,7 @@ const Portfolio = () => {
 
   const handleClick = (e) => {
     const repository = e.target.getAttribute('data-value');
-    if(repository === isClicked) return;
+    if (repository === isClicked) return;
 
     setRepositories(repository)
     setActive(repository);
@@ -60,6 +68,18 @@ const Portfolio = () => {
     <section className="portfolio">
       <Container>
         <SectionTitle title='Portfolio' />
+        <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="dark"
+        />
         <div className="portfolio-cards" data-aos="fade-right">
           {repos.map((items, index) => (
             <div key={index} className="card">

@@ -39,7 +39,7 @@ const Contact = () => {
       }).then(res => {
         if (res.status === 200) {
           const message = res.data;
-          toast.success('Email send!');
+          toast.success(message);
 
           setNameValue('');
           setSurnameValue('');
@@ -50,7 +50,7 @@ const Contact = () => {
     } catch (error) {
       console.error(error)
       if(error.message === 'Network Error') {
-        toast.warn('Error internet connection!')
+        toast.warn('Error server connection!')
       } else {
         toast.error('Something went wrong!')
       }
