@@ -2,6 +2,8 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 
+const port = 8000;
+
 const portfolioRoutes = require('./routes/portfolio-routes');
 const contactRoutes = require('./routes/contact-routes');
 
@@ -20,4 +22,6 @@ app.use('/portfolio/:repo', (req, res, next) => {
 app.use('/contact', contactRoutes);
 
 
-app.listen(8000);
+app.listen(port, () => {
+    console.log(`Server is started on port: ${port}`)
+});
