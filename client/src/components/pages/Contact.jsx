@@ -31,7 +31,7 @@ const Contact = () => {
 
 
     try {
-      const url = 'http://localhost:8000/contact';
+      const url = 'https://www.pmdev.ovh/contact';
       await axios.post(url, JSON.stringify(formData), {
         headers: {
           "Content-Type": "application/json"
