@@ -1,3 +1,18 @@
-# My own new portfolio page
 
-Welcome in my new version of my porftolio.
+# Portfolio page
+
+This is my portfolio site, where I show how I create and develop my attributes and skills in programming but also introduce myself.
+
+
+## Tech Stack
+
+**Client:** React, Routes, Axios, Toastify, CSS Components, AOS Animated
+
+**Server:** Node, Express, Axios, Nodemailer
+
+
+## Authors
+
+- [@malzagic](https://www.github.com/malzagic)
+
+https://portfolio-423l.vercel.app/
