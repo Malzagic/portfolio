@@ -136,7 +136,9 @@
 		margin: 1rem auto;
 	}
 	.item-text {
+		text-align: center;
 		padding-top: 2rem;
 		padding-left: 0;
+		margin: auto;
 	}
   }
