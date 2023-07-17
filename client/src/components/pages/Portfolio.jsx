@@ -9,7 +9,7 @@ import feedbackUI from '../../assets/github-projects/Feedback-UI.png';
 import githubFinder from '../../assets/github-projects/Github-Finder.png';
 import reactWeatherApp from '../../assets/github-projects/ReactWeather-app.png';
 import trackCalories from '../../assets/github-projects/Track_calories.png';
-import calculateCarExcise from '../../assets/github-projects/calculate-car-excise.png';
+import NewslatterSignup from '../../assets/github-projects/Newslatter_Signup.png'
 
 import './Portfolio.css';
 
@@ -21,8 +21,8 @@ import 'react-toastify/dist/ReactToastify.css';
 AOS.init();
 
 const Portfolio = () => {
-  const repos = ['portfolio', 'Feedback-UI', 'Github-Finder', 'ReactWeather-app', 'Track_calories', 'calculate-car-excise'];
-  const reposImg = [portfolio, feedbackUI, githubFinder, reactWeatherApp, trackCalories, calculateCarExcise];
+  const repos = ['portfolio', 'Feedback-UI', 'Github-Finder', 'ReactWeather-app', 'Track_calories', 'newsletter_pmdev'];
+  const reposImg = [portfolio, feedbackUI, githubFinder, reactWeatherApp, trackCalories, NewslatterSignup];
 
   const [repositories, setRepositories] = useState(repos[0]);
   const [active, setActive] = useState(repos[0]);
