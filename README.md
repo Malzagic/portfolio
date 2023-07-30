@@ -15,4 +15,4 @@ This is my portfolio site, where I show how I create and develop my attributes a
 
 - [@malzagic](https://www.github.com/malzagic)
 
-https://portfolio-423l.vercel.app/
+LIVE: https://portfolio-red-iota-82.vercel.app/
