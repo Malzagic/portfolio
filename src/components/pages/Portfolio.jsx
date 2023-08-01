@@ -33,8 +33,13 @@ const Portfolio = () => {
 
   const fetchData = async (repo) => {
     try {
-      const url = `http://www.pmdev.ovh:8080/portfolio/`;
-      const response = await axios.get(url + repo);
+      const url = `http://localhost:8080/portfolio`;
+
+      const params = {
+        repo: repo,
+      }
+
+      const response = await axios.post(url, params);
       const jsonData = await response.data;
 
       setData(jsonData[0])
