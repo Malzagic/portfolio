@@ -33,7 +33,7 @@ const Portfolio = () => {
 
   const fetchData = async (repo) => {
     try {
-      const url = `https://www.pmdev.ovh/portfolio/`;
+      const url = `https://www.pmdev.ovh:8080/portfolio/`;
       console.log(url + repo)
       const response = await axios.get(url + repo);
       const jsonData = await response.data;
