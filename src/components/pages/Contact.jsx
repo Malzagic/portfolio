@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from 'axios';
+import ReCAPTCHA from "react-google-recaptcha";
 import Container from '../../shared/components/UX/containers/Container';
 import SectionTitle from "../../shared/components/UX/sectionTitles/SectionTitle";
 
@@ -31,7 +32,7 @@ const Contact = () => {
 
 
     try {
-      const url = '';
+      const url = 'https://pmdev-api-ovh.onrender.com/contact';
       await axios.post(url, JSON.stringify(formData), {
         headers: {
           "Content-Type": "application/json"
@@ -49,12 +50,16 @@ const Contact = () => {
       })
     } catch (error) {
       console.error(error)
-      if(error.message === 'Network Error') {
+      if (error.message === 'Network Error') {
         toast.warn('Error server connection!')
       } else {
         toast.error('Something went wrong!')
       }
     }
+  }
+
+  function onChange(value) {
+    console.log("Captcha value:", value);
   }
 
 
@@ -84,6 +89,10 @@ const Contact = () => {
           <label htmlFor="message">Message</label>
           <textarea onChange={(e) => setMessageValue(e.target.value)} name="message" id="message" cols="50" rows="10" value={messageValue} required />
           <input className={'btn sendBtn'} type="submit" value={'Submit'} />
+          <ReCAPTCHA
+            sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY}
+            onChange={onChange}
+          />
         </form>
       </Container>
     </section>

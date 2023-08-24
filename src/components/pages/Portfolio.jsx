@@ -65,7 +65,6 @@ const Portfolio = () => {
     setLoading(true);
   }, [])
 
-  // console.log(isClicked)
   return (
     <section className="portfolio">
       <Container>
@@ -82,6 +81,7 @@ const Portfolio = () => {
           pauseOnHover
           theme="dark"
         />
+        {/* Here we have cards with portfolio projects */}
         <div className="portfolio-cards" data-aos="fade-right">
           {repositories.map((item, index) => (
             <div key={index} className="card" onClick={e => handleClick(e)}>
@@ -106,7 +106,7 @@ const Portfolio = () => {
               {!loading &&
                   <div className="item-box">
                     <div className="item-img">
-                      {/* <img src={reposImg[index]} alt="" /> */}
+                      <img src={reposImg[index]} alt={item.name} />
                     </div>
                     <div className="item-text">
                       <h3>Author: {item.owner.login}</h3>
