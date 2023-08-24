@@ -1,0 +1,12 @@
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+@media screen and (max-width: 768px) {
+    .row {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}

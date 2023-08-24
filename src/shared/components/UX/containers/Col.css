@@ -1,0 +1,69 @@
+.col {
+    text-align: center;
+    flex: 0 0 auto;
+    width: 50%;
+    padding: 0.5rem;
+    margin: auto;
+}
+
+.col-rounded {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 98px;
+    height: 98px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.fs-3 {
+    font-size: 3rem;
+}
+
+.mt2 {
+    margin-top: 2px;
+}
+
+.title {
+    visibility: hidden;
+}
+
+.title.active {
+    visibility: visible;
+}
+
+.active::before {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    height: 100%;
+    margin: auto;
+    border-radius: 300px;
+    animation-name: activeAnimation;
+    animation-duration: .3s;
+    animation-fill-mode: forwards;
+}
+
+
+@keyframes activeAnimation {
+    from {
+        background-color: inherit;
+        transform: translate(-5px, 0);
+        width: 0%;
+    }
+    to {
+        background-color: var( --secondary-background-color-rgb-dark);
+        transform: translate(0, 0);
+        width: 100%;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .col {
+        width: 100%;
+    }
+}

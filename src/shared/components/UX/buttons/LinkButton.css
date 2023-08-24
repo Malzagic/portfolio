@@ -1,0 +1,16 @@
+.btn {
+  display: inline-block;
+	text-align: center;
+  color: var(--secondary-color-dark);
+	padding: 0.5rem 1rem;
+  text-decoration: none;
+  border: 1px solid var(--secondary-background-color-rgb-dark);
+	border-radius: 10px;
+  transition: all .3s ease-in-out;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: var(--secondary-background-color-rgb-dark);
+	box-shadow: 10px 10px 10px rgba(0,0,0,.3);
+}

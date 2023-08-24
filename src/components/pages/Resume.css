@@ -1,0 +1,117 @@
+.resume-wrapper {
+  border-left: 3px solid var(--bg-lines-color-dark);
+}
+
+.resume-box {
+  display: flex;
+  margin-top: 30px;
+}
+
+.resume-summary {
+  align-self: flex-start;
+  flex: 0 0 220px;
+  max-width: 220px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.resume-summary::before {
+  background: var(--main-color-dark);
+  border: 3px solid var(--bg-lines-color-dark);
+  border-radius: 100px;
+  content: "";
+  height: 15px;
+  left: -12px;
+  position: absolute;
+  top: 0;
+  width: 15px;
+}
+
+.resume-summary-title {
+  font-size: 1rem;
+}
+
+.resume-details {
+  padding-left: 50px;
+  position: relative;
+}
+
+.resume-details::before {
+  background: var(--bg-lines-color-dark);
+  content: "";
+  height: 2px;
+  left: 0;
+  position: absolute;
+  top: 10px;
+  width: 30px;
+}
+
+.resume-details-title {
+  font-size: 1.5rem;
+}
+
+.resume-details-link {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.resume-details-link a {
+  width: 100%;
+  background-image: linear-gradient(to right,
+      var(--border-color-dark),
+      var(--border-color-dark) 50%,
+      var(--links-opacity-color-dark) 50%);
+  background-size: 200% 100%;
+  background-position: -100%;
+  position: relative;
+  background-clip: content-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+}
+
+.resume-details-link a::before {
+  content: '';
+  background: var(--border-color-dark);
+  display: block;
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  transition: all 0.3s ease-in-out;
+}
+
+.resume-details-link a:hover {
+  background-position: 0;
+}
+
+.resume-details-link a::before,
+.resume-details-link a:focus {
+  background-position: 0;
+}
+
+.resume-details-link a:hover::before {
+  width: 100%;
+}
+
+.resume-details-link a:active::before,
+.resume-details-link a:focus::before {
+  width: 100%;
+}
+
+.resume-details p {
+  font-size: 0.8rem;
+  color: var(--paragraph-color-dark);
+}
+
+
+@media screen and (max-width: 768px) {
+  .resume {
+    padding-top: 3rem;
+  }
+  .resume-box {
+    display: block;
+  }
+}
