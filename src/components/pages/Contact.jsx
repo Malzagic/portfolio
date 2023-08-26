@@ -33,27 +33,30 @@ const Contact = () => {
 
     try {
       const url = 'https://www.pmdev.ovh/contact';
-      await axios.post(url, JSON.stringify(formData), {
+      const options = {
         headers: {
           "Content-Type": "application/json"
         }
-      }).then(res => {
-        if (res.status === 200) {
-          const message = res.data;
-          toast.success(message.message);
+      }
+
+      const response = await axios.post(url, JSON.stringify(formData), options);
+      const data = response.data;
+
+      if (response.status === 200) {
+        if (data.validation === false) {
+          toast.warn(data.message);
+        } else {
+          toast.success(data.message);
 
           setNameValue('');
           setSurnameValue('');
           setEmailValue('');
           setMessageValue('');
         }
-      })
+      }
     } catch (error) {
-      console.error(error)
       if (error.message === 'Network Error') {
         toast.warn('Error server connection!')
-      } else {
-        toast.error('Something went wrong!')
       }
     }
   }
@@ -81,7 +84,7 @@ const Contact = () => {
         />
         <form onSubmit={sendEmailHandler} className="contact-form" data-aos="fade-right">
           <label htmlFor="name">Name</label>
-          <input onChange={e => setNameValue(e.target.value)} type="text" id="name" value={nameValue} required />
+          <input onChange={e => setNameValue(e.target.value)} type="text" id="name" value={nameValue} />
           <label htmlFor="surname">Surname</label>
           <input onChange={e => setSurnameValue(e.target.value)} type="text" id="surname" value={surnameValue} required />
           <label htmlFor="email">Email</label>
@@ -92,6 +95,8 @@ const Contact = () => {
           <ReCAPTCHA
             sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY}
             onChange={onChange}
+            theme="dark"
+            badge="bottomleft"
           />
         </form>
       </Container>
