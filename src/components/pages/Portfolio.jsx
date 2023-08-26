@@ -24,7 +24,6 @@ const Portfolio = () => {
   const reposImg = [portfolio, feedbackUI, githubFinder, reactWeatherApp, trackCalories, NewslatterSignup];
 
   const [repositories, setRepositories] = useState([]);
-  const [isClicked, setIsClicked] = useState("");
   const [isActive, setIsActive] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -51,7 +50,7 @@ const Portfolio = () => {
   const handleClick = (e) => {
     let repo;
 
-    if(e.target.getAttribute("data-value")) {
+    if (e.target.getAttribute("data-value")) {
       repo = e.target.getAttribute("data-value");
     }
 
@@ -83,27 +82,26 @@ const Portfolio = () => {
         />
         {/* Here we have cards with portfolio projects */}
         <div className="portfolio-cards" data-aos="fade-right">
-          {repositories.map((item, index) => (
-            <div key={index} className="card" onClick={e => handleClick(e)}>
-              <h2
-                data-value={item.name}
-              >
-                {
-                  item.name.replace(/[^a-zA-Z0-9 ]/g, ' ').toUpperCase()
-                }
-              </h2>
-              <div className={`card-item ${isActive === item.name ? "active-card" : ""}`}>
-                <Oval
-                  color="#fff"
-                  wrapperStyle={{}}
-                  wrapperClass="card-loader"
-                  visible={loading}
-                  ariaLabel='oval-loading'
-                  secondaryColor="#000"
-                  strokeWidth={3}
-                  strokeWidthSecondary={3}
-                />
-              {!loading &&
+            <Oval
+              color="#fff"
+              wrapperStyle={{}}
+              wrapperClass="card-loader"
+              visible={loading}
+              ariaLabel='oval-loading'
+              secondaryColor="#000"
+              strokeWidth={3}
+              strokeWidthSecondary={3}
+            />
+             {repositories.map((item, index) => (
+              <div key={index} className="card" onClick={e => handleClick(e)}>
+                <h2
+                  data-value={item.name}
+                >
+                  {
+                    item.name.replace(/[^a-zA-Z0-9 ]/g, ' ').toUpperCase()
+                  }
+                </h2>
+                <div className={`card-item ${isActive === item.name ? "active-card" : ""}`}>
                   <div className="item-box">
                     <div className="item-img">
                       <img src={reposImg[index]} alt={item.name} />
@@ -137,10 +135,9 @@ const Portfolio = () => {
                       </div>
                     </div>
                   </div>
-                }
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
         </div>
       </Container>
     </section>
