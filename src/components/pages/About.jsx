@@ -39,7 +39,7 @@ const About = () => {
                 I am
                 <span className="content-title-theme"> Przemysław Młoczkowski</span>
               </h3>
-              <p className="content-text">Hi, I am a self-taught junior frontend developer and a bit of a full stack MERN. I can create a visible, usable and more interactive website with attractive animations. I can also develop websites and am trying to start developing mobile applications. For now I'm starting with flutter framework and dart language, but I'm working mainly with react and javascript.</p>
+              <p className="content-text">Hi, I am a self-taught, passionate programmer who started in 2018 and is still learning. My main focus is web development, especially in the MERN stack. I've already accumulated a lot of knowledge on the frontend, and now I'm supplementing that by learning the backend. I never stop, so what you see now on my site may change in the future. Best regards and feel free to take a look at my work.</p>
               <ul className="content-list">
                 <li className="content-list-item">
                   <b>Full Name</b>
