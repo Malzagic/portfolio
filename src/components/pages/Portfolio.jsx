@@ -32,7 +32,7 @@ const Portfolio = () => {
   // FETCHING DATA FROM SERVER
   const fetchData = async () => {
     try {
-      const url = `https://pmdev-api-ovh.onrender.com/portfolio`;
+      const url = `https://www.pmdev.ovh/portfolio`;
       const response = await axios.get(url);
       const data = response.data;
 
