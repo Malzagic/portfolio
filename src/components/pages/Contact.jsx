@@ -40,7 +40,7 @@ const Contact = () => {
       }).then(res => {
         if (res.status === 200) {
           const message = res.data;
-          toast.success(message);
+          toast.success(message.message);
 
           setNameValue('');
           setSurnameValue('');
@@ -81,13 +81,13 @@ const Contact = () => {
         />
         <form onSubmit={sendEmailHandler} className="contact-form" data-aos="fade-right">
           <label htmlFor="name">Name</label>
-          <input onChange={(e) => setNameValue(e.target.value)} type="text" id="name" value={nameValue} required />
+          <input onChange={e => setNameValue(e.target.value)} type="text" id="name" value={nameValue} required />
           <label htmlFor="surname">Surname</label>
-          <input onChange={(e) => setSurnameValue(e.target.value)} type="text" id="surname" value={surnameValue} required />
+          <input onChange={e => setSurnameValue(e.target.value)} type="text" id="surname" value={surnameValue} required />
           <label htmlFor="email">Email</label>
-          <input onChange={(e) => setEmailValue(e.target.value)} type="email" id="email" value={emailValue} required />
+          <input onChange={e => setEmailValue(e.target.value)} type="email" id="email" value={emailValue} required />
           <label htmlFor="message">Message</label>
-          <textarea onChange={(e) => setMessageValue(e.target.value)} name="message" id="message" cols="50" rows="10" value={messageValue} required />
+          <textarea onChange={e => setMessageValue(e.target.value)} name="message" id="message" cols="50" rows="10" value={messageValue} required />
           <input className={'btn sendBtn'} type="submit" value={'Submit'} />
           <ReCAPTCHA
             sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY}
