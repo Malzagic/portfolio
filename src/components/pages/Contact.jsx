@@ -84,7 +84,7 @@ const Contact = () => {
         />
         <form onSubmit={sendEmailHandler} className="contact-form" data-aos="fade-right">
           <label htmlFor="name">Name</label>
-          <input onChange={e => setNameValue(e.target.value)} type="text" id="name" value={nameValue} />
+          <input onChange={e => setNameValue(e.target.value)} type="text" id="name" value={nameValue} required/>
           <label htmlFor="surname">Surname</label>
           <input onChange={e => setSurnameValue(e.target.value)} type="text" id="surname" value={surnameValue} required />
           <label htmlFor="email">Email</label>

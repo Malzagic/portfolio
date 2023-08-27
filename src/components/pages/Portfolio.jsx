@@ -101,7 +101,7 @@ const Portfolio = () => {
               <div className={`card-item ${isActive === item.name ? "active-card" : ""}`}>
                 <div className="item-box">
                   <div className="item-img">
-                    <img src={reposImg[index]} alt={item.name} />
+                    {/* <img src={reposImg[index]} alt={item.name} /> */}
                   </div>
                   <div className="item-text">
                     <h3>Author: {item.owner.login}</h3>

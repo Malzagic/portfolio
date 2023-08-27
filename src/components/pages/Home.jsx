@@ -22,7 +22,7 @@ const Home = () => {
             Hi, I am 
             <span className="title-name"><b> {text}</b></span>
           </h1>
-          <p className="header-text">I am fullstack developer. I can create visible, usable and more interactive website with attractive animations. I can also create web and mobile applications.</p>
+          <p className="header-text">I am a fullstack webdeveloper. I can create a visible, usable and more interactive website with attractive animations. I invite you to see more about me.</p>
           <SocialMediaBars  
             ul="socialmedia-bar" 
             li="socialmedia-link" 
