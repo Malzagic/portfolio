@@ -168,7 +168,7 @@ const Resume = () => {
               <h5 className="resume-details-title">The Complete 2023 Web Development Bootcamp</h5>
               <h6 className="resume-details-link"><Link to={`https://www.udemy.com/course/the-complete-web-development-bootcamp/`} target="_blank">Udemy Course</Link></h6>
               <p>
-                In 2023 - I started and continue course from DR. Angela Yu about complete knownlage for web development from frontend to backend.
+                In 2023 - Complete full course from DR. Angela Yu about complete knownlage for web development from frontend to backend.
               </p>
             </div>
           </div>

@@ -32,7 +32,7 @@ const Contact = () => {
 
 
     try {
-      const url = 'https://www.pmdev.ovh/contact';
+      const url = 'https://www.pmdev.ovh/api/contact';
       const options = {
         headers: {
           "Content-Type": "application/json"
