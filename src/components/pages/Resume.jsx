@@ -45,10 +45,22 @@ const Resume = () => {
               <h6 className="resume-summary-title">2010/2011 - Presents</h6>
             </div>
             <div className="resume-details">
-              <h5 className="resume-details-title">Technical School</h5>
+              <h5 className="resume-details-title">Secondary Technical School</h5>
               <h6 className="resume-details-link"><Link to={`https://zscku.pl/`} target="_blank">ZS CKU nr 2 w Pyrzycach</Link></h6>
               <p>
-                In 2010/2011 school year I have end Technical School ZS CKU nr 2 in Pyrzyce, on IT profile with specialization of web applications
+                In 2010/2011 school year I have end Technical School ZS CKU nr 2 in Pyrzyce, on IT profile with specialization of web applications.
+              </p>
+            </div>
+          </div>
+          <div className="resume-box">
+            <div className="resume-summary">
+              <h6 className="resume-summary-title">2023 - Presents</h6>
+            </div>
+            <div className="resume-details">
+              <h5 className="resume-details-title">Higher School of Vocational Training</h5>
+              <h6 className="resume-details-link"><Link to={`https://zscku.pl/`} target="_blank">WSKZ University</Link></h6>
+              <p>
+              I started studying cyber security at the university in 2023 in the department of homeland security.
               </p>
             </div>
           </div>
@@ -169,6 +181,18 @@ const Resume = () => {
               <h6 className="resume-details-link"><Link to={`https://www.udemy.com/course/the-complete-web-development-bootcamp/`} target="_blank">Udemy Course</Link></h6>
               <p>
                 In 2023 - Complete full course from DR. Angela Yu about complete knownlage for web development from frontend to backend.
+              </p>
+            </div>
+          </div>
+          <div className="resume-box">
+            <div className="resume-summary">
+              <h6 className="resume-summary-title">2023 - Presents</h6>
+            </div>
+            <div className="resume-details">
+              <h5 className="resume-details-title">Introduction to Cybersecurity</h5>
+              <h6 className="resume-details-link"><Link to={`https://www.credly.com/badges/49438b78-d130-496d-852f-54dbdbc05bb4/public_url`} target="_blank">CISCO Academy</Link></h6>
+              <p>
+                In 2023 - Cisco verifies the earner of this badge successfully completed the Introduction to Cybersecurity course. The holder of this student-level credential has introductory knowledge of cybersecurity, including the global implications of cyber threats on industries, and why cybersecurity is a growing profession. They understand vulnerabilities and threat detection and defense. They also have insight into opportunities available with pursuing cybersecurity certifications.
               </p>
             </div>
           </div>
