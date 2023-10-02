@@ -58,7 +58,7 @@ const Resume = () => {
             </div>
             <div className="resume-details">
               <h5 className="resume-details-title">Higher School of Vocational Training</h5>
-              <h6 className="resume-details-link"><Link to={`https://zscku.pl/`} target="_blank">WSKZ University</Link></h6>
+              <h6 className="resume-details-link"><Link to={`https://studia-online.pl`} target="_blank">WSKZ University</Link></h6>
               <p>
               I started studying cyber security at the university in 2023 in the department of homeland security.
               </p>
