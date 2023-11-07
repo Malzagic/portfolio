@@ -156,7 +156,7 @@ const Resume = () => {
               <h5 className="resume-details-title">React, NodeJS, Express & MongoDB - MERN Stack</h5>
               <h6 className="resume-details-link"><Link to={`https://www.udemy.com/course/react-nodejs-express-mongodb-the-mern-fullstack-guide/`} target="_blank">Udemy Course</Link></h6>
               <p>
-                In 2023 - I started and continue course from Maximilian Schwarzmuller about being full/mern stack developer.
+                In 2023 - I started and end course from Maximilian Schwarzmuller about being full/mern stack developer. Learn how to use NodeJs, ExpressJS combine with React and MongoDB.
               </p>
             </div>
           </div>
