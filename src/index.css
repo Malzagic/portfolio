@@ -10,9 +10,6 @@
   --bg-lines-color-dark: rgba(255,255,255,0.1);
   --paragraph-color-dark: rgba(255, 255, 255, 0.7);
   --links-opacity-color-dark: rgba(255, 255, 255, 0.9);
-
-  
-  position: relative;
 }
 
 *
@@ -27,4 +24,15 @@ body {
   background-color: var(--main-color-dark);
   color: var(--secondary-color-dark);
   font-family: 'Montserrat', sans-serif;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-loader {
+	position: absolute;
+	top: 50%;
 }
