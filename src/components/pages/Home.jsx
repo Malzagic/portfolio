@@ -1,7 +1,7 @@
 import React from "react";
 
-import Container from '../../shared/components/UX/containers/Container';
-import SocialMediaBars from "../../shared/components/UX/socialMediaBars/SocialMediaBars";
+import Container from '../../shared/components/UI/containers/Container';
+import SocialMediaBars from "../../shared/components/UI/socialMediaBars/SocialMediaBars";
 import { faFacebookF } from '@fortawesome/free-brands-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons';

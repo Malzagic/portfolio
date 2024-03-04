@@ -3,7 +3,7 @@ import React from "react";
 import './LinkButton.css';
 
 const LinkButton = (props) => {
-  const className = props.className ? `${props.className} btn`: "btn";
+  const className = props.className ? `btn ${props.className}`: "btn";
   const get = props.get === true ? props.get : false;
 
 
