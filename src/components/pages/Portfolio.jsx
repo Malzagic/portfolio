@@ -2,10 +2,9 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 import Section from "../../shared/components/UI/section/Section";
-import SectionTitle from "../../shared/components/UI/section/SectionTitle";
-import LinkButton from "../../shared/components/UI/buttons/LinkButton";
-import { Oval } from "react-loader-spinner";
+import Button from "../../shared/components/UI/buttons/Button";
 
+import { Oval } from "react-loader-spinner";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -101,19 +100,19 @@ const Portfolio = () => {
                 <div className="item-text">
                   <h3>Author: {item.owner.login}</h3>
                   <div className="item-links">
-                    <LinkButton
+                    <Button
                       className="portfolio-btn"
                       link={item.html_url}
                       target="_blank"
                       text={"Github"}
                     />
-                    <LinkButton
+                    <Button
                       className="portfolio-btn"
                       link={item.html_url}
                       target="_blank"
                       text={"Code"}
                     />
-                    <LinkButton
+                    <Button
                       className="portfolio-btn"
                       link={item.homepage}
                       target="_blank"

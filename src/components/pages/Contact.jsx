@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
 // import ReCAPTCHA from "react-google-recaptcha";
-import SectionTitle from "../../shared/components/UI/section/SectionTitle";
 import Section from "../../shared/components/UI/section/Section";
 
 import "./Contact.css";

@@ -5,7 +5,7 @@ import styles from "./Button.module.css";
 
 export default function Button({ href, target, children }) {
   return (
-    <Link className={styles.link} to={href} target={target && "_blank"}>
+    <Link className={styles.btn} to={href} target={target && "_blank"}>
       {children}
     </Link>
   );

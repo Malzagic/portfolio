@@ -12,8 +12,11 @@ export default function NotFound() {
       <Container>
         <div>
           <h1>Page Not Found 404</h1>
-          <p>I am apologize, but the page you requested could not be found. Please check the URL and try again.</p>
-          <Button href="/" >Back to Home Page</Button>
+          <p>
+            I am apologize, but the page you requested could not be found.
+            Please check the URL and try again.
+          </p>
+          <Button href="/">Back to Home Page</Button>
         </div>
       </Container>
     </Section>

@@ -1,4 +1,4 @@
-.link {
+.btn {
   width: 100%;
   background-image: linear-gradient(
     to right,
@@ -16,7 +16,7 @@
   text-decoration: none;
 }
 
-.link::before {
+.btn::before {
   content: "";
   background: var(--border-color-dark);
   display: block;
@@ -28,20 +28,20 @@
   transition: all 0.3s ease-in-out;
 }
 
-.link:hover {
+.btn:hover {
   background-position: 0;
 }
 
-.link::before,
-.link:focus {
+.btn::before,
+.btn:focus {
   background-position: 0;
 }
 
-.link:hover::before {
+.btn:hover::before {
   width: 100%;
 }
 
-.link:active::before,
-.link:focus::before {
+.btn:active::before,
+.btn:focus::before {
   width: 100%;
 }
