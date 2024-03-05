@@ -1,13 +1,17 @@
 import React from "react";
 
-import './SectionTitle.css';
+import styles from "./SectionTitle.module.css";
 
-const SectionTitle = (props) => {
-    return (
-        <div className={`title-section ` + props.className}>
-            <h2 className="title-theme">{props.title}</h2>
-        </div>
-    )
-}
+const SectionTitle = ({ title, style }) => {
+  return (
+    <div
+      className={
+        style ? `${styles.titleContainer} ${style}` : styles.titleContainer
+      }
+    >
+      <h2 className={styles.titleTheme}>{title}</h2>
+    </div>
+  );
+};
 
 export default SectionTitle;

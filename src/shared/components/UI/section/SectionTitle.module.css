@@ -1,8 +1,8 @@
-.title-section {
+.titleContainer {
     margin-bottom: 2rem;
 }
 
-.title-theme {
+.titleTheme {
     font-size: 3rem;
     letter-spacing: 3px;
     position: relative;
@@ -10,7 +10,7 @@
     text-transform: uppercase;
 }
 
-.title-theme::before {
+.titleTheme::before {
     content: '';
     position: absolute;
     top: auto;
@@ -22,7 +22,7 @@
     border-radius: 100px;
 }
 
-.title-theme::after {
+.titleTheme::after {
     content: '';
     position: absolute;
     top: auto;
@@ -40,7 +40,7 @@
 }
 
 @media screen and (max-width: 768px) {
-    .title-theme {
+    .titleTheme {
         font-size: 1.5rem;
     }
 }

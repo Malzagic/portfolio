@@ -55,8 +55,7 @@ const Portfolio = () => {
   }, []);
 
   return (
-    <Section>
-      <SectionTitle title="Portfolio" />
+    <Section title="portfolio">
       {/* loader */}
       <div className="center">
         <Oval
