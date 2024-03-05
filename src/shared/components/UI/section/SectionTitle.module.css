@@ -35,10 +35,6 @@
     filter: drop-shadow(0 0 5px var(--border-color-dark));
 }
 
-.mt-2 {
-    margin-top: 2rem;
-}
-
 @media screen and (max-width: 768px) {
     .titleTheme {
         font-size: 1.5rem;

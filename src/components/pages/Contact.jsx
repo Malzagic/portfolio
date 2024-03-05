@@ -66,8 +66,7 @@ export default function Contact() {
   // }
 
   return (
-    <Section>
-      <SectionTitle title="Contact" />
+    <Section title="Contact">
       <ToastContainer
         position="top-right"
         autoClose={5000}
