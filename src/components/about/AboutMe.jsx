@@ -59,7 +59,7 @@ export default function AboutMe({ imageUri, alt }) {
             Available
           </li>
         </ul>
-        <Button href={`/${cv}`} get={true}>Download CV</Button>
+        <Button href={`${cv}`} target="_blank" download>Download CV</Button>
       </div>
     </>
   );
