@@ -49,5 +49,8 @@
   "description": "Welcome in my new version of my porftolio.",
   "main": "index.js",
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@types/aos": "^3.0.7"
+  }
 }

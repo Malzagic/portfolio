@@ -1,0 +1,63 @@
+.resumeBox {
+  display: flex;
+  margin-top: 30px;
+}
+
+.resumeSummary {
+  align-self: flex-start;
+  flex: 0 0 220px;
+  max-width: 220px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.resumeSummary::before {
+  background: var(--main-color-dark);
+  border: 3px solid var(--bg-lines-color-dark);
+  border-radius: 100px;
+  content: "";
+  height: 15px;
+  left: -12px;
+  position: absolute;
+  top: 0;
+  width: 15px;
+}
+
+.summaryTitle {
+  font-size: 1rem;
+}
+
+.resumeDetails {
+  padding-left: 50px;
+  position: relative;
+}
+
+.resumeDetails p {
+  font-size: 0.8rem;
+  color: var(--paragraph-color-dark);
+}
+
+.resumeDetails::before {
+  background: var(--bg-lines-color-dark);
+  content: "";
+  height: 2px;
+  left: 0;
+  position: absolute;
+  top: 10px;
+  width: 30px;
+}
+
+.detailsTitle {
+  font-size: 1.5rem;
+}
+
+.detailsLink {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .resumeBox {
+    display: block;
+  }
+}

@@ -2,10 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import Section from "../../shared/components/UI/section/Section";
-import SectionTitle from "../../shared/components/UI/section/SectionTitle";
 import Button from "../../shared/components/UI/buttons/Button";
+import ResumeBox from "../resume/ResumeBox";
+import { personalData } from "../../util/data";
 
-import "./Resume.css";
+import styles from "./Resume.module.css";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -15,45 +16,24 @@ const Resume = () => {
   return (
     <>
       <Section title="Experience">
-        <div className="resume-wrapper" data-aos="fade-right">
-          <div className="resume-box">
-            <div className="resume-summary">
-              <h6 className="resume-summary-title">2018 - Presents</h6>
-            </div>
-            <div className="resume-details">
-              <h5 className="resume-details-title">IT Support Technician</h5>
-              <h6 className="resume-details-link">
-                <Button
-                  href={`https://www.facebook.com/mpowroznikcom`}
-                  target="_blank"
-                >
-                  mpowroznik.com
-                </Button>
-              </h6>
-              <p>
-                IT services and support for cooperating companies. Creating
-                websites from scratch and by using CMS ( Wordpress, Elementar ).
-              </p>
-            </div>
+        {personalData.map((data, index) => (
+          <div
+            key={index}
+            className={styles.resumeWrapper}
+            data-aos="fade-right"
+          >
+            {data.experienceData.map((experience, expIndex) => (
+              <ResumeBox
+                key={expIndex}
+                date={experience.date}
+                title={experience.position}
+                url={experience.link}
+                company={experience.organization}
+                details={experience.description}
+              />
+            ))}
           </div>
-          <div className="resume-box">
-            <div className="resume-summary">
-              <h6 className="resume-summary-title">2022 - Presents</h6>
-            </div>
-            <div className="resume-details">
-              <h5 className="resume-details-title">Technical School Teacher</h5>
-              <h6 className="resume-details-link">
-                <Link to={`https://zscku.pl/`} target="_blank">
-                  zscku.pl
-                </Link>
-              </h6>
-              <p>
-                Teaching about computers technologies, networks and severs
-                science. Working with group of students.
-              </p>
-            </div>
-          </div>
-        </div>
+        ))}
       </Section>
       <Section title="Education & Qualifications">
         <div className="resume-wrapper" data-aos="fade-right">
