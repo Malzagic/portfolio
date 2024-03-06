@@ -45,3 +45,43 @@
 .btn:focus::before {
   width: 100%;
 }
+
+.button {
+  border: 1px solid var(--border-color-dark);
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  background-image: linear-gradient(
+    to right,
+    var(--border-color-dark),
+    var(--border-color-dark) 50%,
+    var(--links-opacity-color-dark) 50%
+  );
+  background-size: 200% 100%;
+  background-position: -100%;
+  position: relative;
+  background-clip: content-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+}
+
+.button:hover {
+  background-position: 0;
+  border-color: var(--links-opacity-color-dark);
+}
+
+.button::before,
+.button:focus {
+  background-position: 0;
+}
+
+.button:hover::before {
+  width: 100%;
+}
+
+.button:active::before,
+.button:focus::before {
+  width: 100%;
+}

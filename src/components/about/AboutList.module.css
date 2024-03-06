@@ -1,0 +1,22 @@
+.contentList {
+  font-size: 1.2rem;
+  list-style: none;
+}
+
+.listItem {
+  margin-bottom: 1rem;
+}
+
+.listItem b {
+  display: inline-block;
+  min-width: 120px;
+  position: relative;
+  margin-right: 10px;
+}
+
+.listItem b::after {
+  content: ":";
+  position: absolute;
+  top: 0;
+  right: 0;
+}
