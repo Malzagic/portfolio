@@ -1,11 +1,11 @@
 import React from "react";
 
-import './Grid.css';
+import styles from "./Grid.module.css";
 
-const Grid = (props) => {
-    return (
-        <div className="grid">{props.children}</div>
-    )
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
+
+export default function Grid({ aos, children }) {
+  return <div data-aos={aos} className={styles.grid}>{children}</div>;
 }
-
-export default Grid;

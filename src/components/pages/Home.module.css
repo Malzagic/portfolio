@@ -1,0 +1,41 @@
+.mainHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 300;
+  text-align: center;
+}
+
+.title .titleName {
+  font-size: 3rem;
+  letter-spacing: 3px;
+}
+
+.text {
+  font-size: 1.2rem;
+  font-weight: 300;
+  text-align: center;
+  letter-spacing: 1px;
+  line-height: 2rem;
+}
+
+
+@media screen and (max-width: 768px) {
+  .title {
+    display: flex;
+    flex-direction: column;
+    font-size: 2rem;
+  }
+
+  .title .titleName {
+    font-size: 2.2rem;
+  }
+  .text {
+    font-size: 1.2rem;
+  }
+}

@@ -1,22 +1,38 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FaFacebookF, FaGithub, FaLinkedinIn } from "react-icons/fa";
 
-const SocialMediaBars = ({ ul, li, icon1, icon2, icon3, page1, page2, page3 }) => {
- return (
-  <ul className={ul}>
-    <li className={li}>
-      <Link to={page1} target="_blank"><FontAwesomeIcon icon={icon1} /></Link>
-    </li>
-    <li className={li}>
-      <Link to={page2} target="_blank"><FontAwesomeIcon icon={icon2} /></Link>
-    </li>
-    <li className={li}>
-      <Link to={page3} target="_blank"><FontAwesomeIcon icon={icon3} /></Link>
-    </li>
-  </ul>
- )
-}
+import styles from "./SocialMediaBars.module.css";
+
+const SocialMediaBars = () => {
+  return (
+    <ul className={styles.socialmediaBar}>
+      <li className={styles.socialmediaLink}>
+        <Link
+          to={"https://www.facebook.com/przemek.mloczkowski/"}
+          target="_blank"
+        >
+          <FaFacebookF />
+        </Link>
+      </li>
+      <li className={styles.socialmediaLink}>
+        <Link to={"https://github.com/Malzagic"} target="_blank">
+          <FaGithub />
+        </Link>
+      </li>
+      <li className={styles.socialmediaLink}>
+        <Link
+          to={
+            "https://www.linkedin.com/in/przemys%C5%82aw-m%C5%82oczkowski-840543242/"
+          }
+          target="_blank"
+        >
+          <FaLinkedinIn />
+        </Link>
+      </li>
+    </ul>
+  );
+};
 
 export default SocialMediaBars;

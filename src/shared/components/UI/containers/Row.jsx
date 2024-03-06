@@ -1,11 +1,11 @@
 import React from "react";
 
-import './Row.css';
+import styles from "./Row.module.css";
 
-const Row = (props) => {
-    return (
-        <div className="row">{props.children}</div>
-    )
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
+
+export default function Row({ aos, children }) {
+  return <div data-aos={aos} className={styles.row}>{children}</div>;
 }
-
-export default Row;
