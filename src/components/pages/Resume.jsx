@@ -1,10 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 import Section from "../../shared/components/UI/section/Section";
 import ResumeBox from "../resume/ResumeBox";
 
-import { personalData } from "../../data";
+import { personalData } from "../../data/data";
 
 import styles from "./Resume.module.css";
 

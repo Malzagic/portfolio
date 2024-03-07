@@ -12,7 +12,6 @@ import "./Portfolio.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-
 AOS.init();
 
 const Portfolio = () => {
@@ -100,24 +99,15 @@ const Portfolio = () => {
                 <div className="item-text">
                   <h3>Author: {item.owner.login}</h3>
                   <div className="item-links">
-                    <Button
-                      className="portfolio-btn"
-                      link={item.html_url}
-                      target="_blank"
-                      text={"Github"}
-                    />
-                    <Button
-                      className="portfolio-btn"
-                      link={item.html_url}
-                      target="_blank"
-                      text={"Code"}
-                    />
-                    <Button
-                      className="portfolio-btn"
-                      link={item.homepage}
-                      target="_blank"
-                      text={"Live"}
-                    />
+                    <Button href={item.html_url} target button>
+                      Github
+                    </Button>
+                    <Button href={item.html_url} target button>
+                      Code
+                    </Button>
+                    <Button href={item.homepage} target button>
+                      Live
+                    </Button>
                   </div>
                   <p>Languages used: {item.language}</p>
                   <div className="item-description">

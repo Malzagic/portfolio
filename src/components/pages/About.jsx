@@ -3,10 +3,10 @@ import Section from "../../shared/components/UI/section/Section";
 import Row from "../../shared/components/UI/containers/Row";
 import AboutMe from "../about/AboutMe";
 import Tiles from "../../shared/components/UI/tilesbox/Tiles";
+import SkillsGrid from "../about/SkillsGrid";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
-import SkillsGrid from "../about/SkillsGrid";
 AOS.init();
 
 const About = () => {

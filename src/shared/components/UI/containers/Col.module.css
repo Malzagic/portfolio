@@ -6,7 +6,7 @@
     margin: auto;
 }
 
-.col-rounded {
+.colRounded {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -15,14 +15,6 @@
     height: 98px;
     margin: 0 auto;
     position: relative;
-}
-
-.fs-3 {
-    font-size: 3rem;
-}
-
-.mt2 {
-    margin-top: 2px;
 }
 
 .title {
