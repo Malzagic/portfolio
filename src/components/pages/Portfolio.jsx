@@ -1,44 +1,37 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { v4 as uuidv4 } from "uuid";
 
 import Section from "../../shared/components/UI/section/Section";
-import Button from "../../shared/components/UI/buttons/Button";
+import Card from "../portfolio/Card";
 
 import { Oval } from "react-loader-spinner";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-import "./Portfolio.css";
+import styles from "./Portfolio.module.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+let myuuid = uuidv4();
+
 AOS.init();
 
-const Portfolio = () => {
+export default function Portfolio() {
   const [repositories, setRepositories] = useState([]);
-  const [isActive, setIsActive] = useState(false);
-  const [loading, setLoading] = useState(false);
+  const [isActive, setIsActive] = useState();
+  const [loading, setLoading] = useState(true);
+  const [isError, setIsError] = useState(false);
 
-  // FETCHING DATA FROM SERVER
-  const fetchData = async () => {
-    try {
-      const url = `https://www.pmdev.ovh/api/portfolio`;
-      const response = await axios.get(url);
-      const data = response.data;
-      setRepositories([...data]);
-      setLoading(false);
-    } catch (error) {
-      if (error.message === "Network Error") {
-        toast.warn("Error server connection!");
-      } else {
-        toast.error("Something went wrong!");
-      }
-    }
-  };
-
-  const handleClick = (e) => {
+  const clickHandler = (e) => {
     let repo;
 
+    if (
+      e.target.getAttribute("data-value") === isActive ||
+      e.target.getAttribute("data-value") === null
+    ) {
+      return;
+    }
     if (e.target.getAttribute("data-value")) {
       repo = e.target.getAttribute("data-value");
     }
@@ -48,80 +41,87 @@ const Portfolio = () => {
 
   // WHEN IS DINAMICLY CHANGED
   useEffect(() => {
+    // FETCHING DATA FROM SERVER
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+
+        const url = `https://www.pmdev.ovh/api/portfolio`;
+        const response = await axios.get(url);
+        const data = response.data;
+
+        setRepositories(data);
+        setLoading(false);
+        setIsError(false);
+      } catch (error) {
+        setIsError(true);
+
+        if (error.message === "Network Error") {
+          toast.warn("Error server connection!", { toastId: myuuid });
+        } else {
+          toast.error("Something went wrong!", { toastId: myuuid });
+        }
+
+        setLoading(true);
+      }
+    };
+
     fetchData();
-    setLoading(true);
   }, []);
+
+  console.log(repositories);
+
+  if (loading || !repositories) {
+    return (
+      <>
+        {isError && (
+          <ToastContainer
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="dark"
+          />
+        )}
+        <div className="center">
+          <Oval
+            color="#fff"
+            wrapperStyle={{}}
+            wrapperClass="card-loader"
+            visible={loading}
+            ariaLabel="oval-loading"
+            secondaryColor="#000"
+            strokeWidth={3}
+            strokeWidthSecondary={3}
+          />
+        </div>
+      </>
+    );
+  }
 
   return (
     <Section title="portfolio">
-      {/* loader */}
-      <div className="center">
-        <Oval
-          color="#fff"
-          wrapperStyle={{}}
-          wrapperClass="card-loader"
-          visible={loading}
-          ariaLabel="oval-loading"
-          secondaryColor="#000"
-          strokeWidth={3}
-          strokeWidthSecondary={3}
-        />
-      </div>
-      <ToastContainer
-        position="top-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="dark"
-      />
-      {/* Here we have cards with portfolio projects */}
-      <div className="portfolio-cards" data-aos="fade-right">
-        {/* map through all repositories */}
-        {repositories.map((item, index) => (
-          <div key={index} className="card" onClick={(e) => handleClick(e)}>
-            <h2 data-value={item.name}>
-              {item.name.replace(/[^a-zA-Z0-9 ]/g, " ").toUpperCase()}
-            </h2>
-            <div
-              className={`card-item ${
-                isActive === item.name ? "active-card" : ""
-              }`}
-            >
-              <div className="item-box">
-                <div className="item-img">
-                  {/* <img src={reposImg[index]} alt={item.name} /> */}
-                </div>
-                <div className="item-text">
-                  <h3>Author: {item.owner.login}</h3>
-                  <div className="item-links">
-                    <Button href={item.html_url} target button>
-                      Github
-                    </Button>
-                    <Button href={item.html_url} target button>
-                      Code
-                    </Button>
-                    <Button href={item.homepage} target button>
-                      Live
-                    </Button>
-                  </div>
-                  <p>Languages used: {item.language}</p>
-                  <div className="item-description">
-                    <h4>Description:</h4>
-                    <p>{item.description}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        ))}
+      <div className={styles.cardsContainer} data-aos="fade-right">
+        {typeof repositories !== "string" &&
+          repositories.map((item, index) => (
+            <Card
+              key={index}
+              onClick={clickHandler}
+              isActive={isActive}
+              name={item.name}
+              author={item.owner.login}
+              url={item.html_url}
+              homepage={item.homepage}
+              language={item.language}
+              description={item.description}
+            ></Card>
+          ))}
       </div>
     </Section>
   );
-};
-
-export default Portfolio;
+}

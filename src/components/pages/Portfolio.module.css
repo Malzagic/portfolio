@@ -1,0 +1,8 @@
+.cardsContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5em;
+  color: var(--secondary-color-dark);
+  border-radius: 10px;
+  position: relative;
+}

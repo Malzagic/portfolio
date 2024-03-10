@@ -1,0 +1,64 @@
+.itemBox {
+  flex: 1;
+  opacity: 1;
+  animation: showItems 1s ease-in;
+  animation-fill-mode: forwards;
+}
+
+.textBox {
+  display: flex;
+  flex-direction: column;
+  padding-left: 2rem;
+}
+
+.textBox h3,
+.textBox p {
+  padding: 0 1rem;
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+  margin: 1rem 0;
+}
+
+.marginLink {
+  margin: 0 1rem;
+}
+
+.description {
+  margin-top: 1rem;
+}
+
+.description h4 {
+  padding-left: 1rem;
+}
+
+.description p {
+  font-weight: 200;
+}
+
+@keyframes showItems {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .itemBox {
+    flex-direction: column;
+    margin: 0 auto;
+  }
+  .textBox {
+    text-align: center;
+    padding-top: 2rem;
+    padding-left: 0;
+    margin: auto;
+  }
+  .links {
+    margin: 1rem auto;
+  }
+}
