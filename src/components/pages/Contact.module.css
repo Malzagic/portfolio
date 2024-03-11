@@ -1,0 +1,17 @@
+.textContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
+.title {
+    font-size: 2rem;
+    margin: 1rem 0;
+}
+
+.text {
+    color: var(--paragraph-color-dark);
+}

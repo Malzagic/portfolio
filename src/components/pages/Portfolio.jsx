@@ -69,8 +69,6 @@ export default function Portfolio() {
     fetchData();
   }, []);
 
-  console.log(repositories);
-
   if (loading || !repositories) {
     return (
       <>

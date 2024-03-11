@@ -1,37 +1,25 @@
-import React, { useState } from "react";
+import React from "react";
 import axios from "axios";
 // import ReCAPTCHA from "react-google-recaptcha";
 import Section from "../../shared/components/UI/section/Section";
+import FormData from "../contact/FormData";
 
-import "./Contact.css";
-
-import AOS from "aos";
-import "aos/dist/aos.css";
+import styles from "./Contact.module.css";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 AOS.init();
 
 export default function Contact() {
-  // change into a context or redux
-  const [nameValue, setNameValue] = useState("");
-  const [surnameValue, setSurnameValue] = useState("");
-  const [emailValue, setEmailValue] = useState("");
-  const [messageValue, setMessageValue] = useState("");
-
-  const sendEmailHandler = async (e) => {
-    e.preventDefault();
-
-    const formData = {
-      name: nameValue,
-      surname: surnameValue,
-      email: emailValue,
-      message: messageValue,
-    };
-
+  const sendEmailHandler = async (formData) => {
+    console.log(formData);
     try {
       const url = "https://www.pmdev.ovh/api/contact";
+      // const url = "http://localhost:8000/api/contact"
       const options = {
         headers: {
           "Content-Type": "application/json",
@@ -46,11 +34,6 @@ export default function Contact() {
           toast.warn(data.message);
         } else {
           toast.success(data.message);
-
-          setNameValue("");
-          setSurnameValue("");
-          setEmailValue("");
-          setMessageValue("");
         }
       }
     } catch (error) {
@@ -59,10 +42,6 @@ export default function Contact() {
       }
     }
   };
-
-  // function onChange(value) {
-  //   console.log("Captcha value:", value);
-  // }
 
   return (
     <Section title="Contact">
@@ -78,53 +57,17 @@ export default function Contact() {
         pauseOnHover
         theme="dark"
       />
-      <form
-        onSubmit={sendEmailHandler}
-        className="contact-form"
-        data-aos="fade-right"
-      >
-        <label htmlFor="name">Name</label>
-        <input
-          onChange={(e) => setNameValue(e.target.value)}
-          type="text"
-          id="name"
-          value={nameValue}
-          required
-        />
-        <label htmlFor="surname">Surname</label>
-        <input
-          onChange={(e) => setSurnameValue(e.target.value)}
-          type="text"
-          id="surname"
-          value={surnameValue}
-          required
-        />
-        <label htmlFor="email">Email</label>
-        <input
-          onChange={(e) => setEmailValue(e.target.value)}
-          type="email"
-          id="email"
-          value={emailValue}
-          required
-        />
-        <label htmlFor="message">Message</label>
-        <textarea
-          onChange={(e) => setMessageValue(e.target.value)}
-          name="message"
-          id="message"
-          cols="50"
-          rows="10"
-          value={messageValue}
-          required
-        />
-        <input className={"btn sendBtn"} type="submit" value={"Submit"} />
-        {/* <ReCAPTCHA
-          sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY}
-          onChange={onChange}
-          theme="dark"
-          badge="bottomleft"
-        /> */}
-      </form>
+      <div data-aos="fade-right" className={styles.textContainer}>
+        <h2 className={styles.title}>Contant with me</h2>
+        <p className={styles.text}>
+          Thank you for your interest in talking to me. If you need more
+          information or help, please do not hesitate to contact me. Complete
+          the form below with your name, surname, e-mail address and a short
+          message and I will respond to your inquiry immediately. Thank you in
+          advance for your message.
+        </p>
+      </div>
+      <FormData onSubmit={sendEmailHandler} />
     </Section>
   );
 }
