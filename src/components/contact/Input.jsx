@@ -1,5 +1,5 @@
 import React from "react";
-import { capitalizeString } from "../../util/capitalizer";
+import { capitalizeString } from "../../util/stringTools";
 
 export default function Input({ type, name, id, value, onChange }) {
   const capitalized = capitalizeString(name);

@@ -1,0 +1,24 @@
+.imageContainer {
+  max-width: 350px;
+  max-height: 350px;
+}
+
+.imageContainer img {
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+.textBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 350px;
+  height: 350px;
+  border: 1px solid var(--border-color-dark);
+  border-radius: 5px;
+}
+.textBox p {
+  padding: 1rem;
+}

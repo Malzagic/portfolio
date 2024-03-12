@@ -1,6 +1,9 @@
 import React from "react";
 
 import ItemBox from "./ItemBox";
+import ImageBox from "./ImageBox";
+
+import { lowerCaseString, stringReplacment } from "../../util/stringTools";
 
 import styles from "./Card.module.css";
 
@@ -17,16 +20,14 @@ export default function Card({
   return (
     <div className={styles.card} onClick={onClick}>
       <h2 data-value={name} className={styles.title}>
-        {name.replace(/[^a-zA-Z0-9 ]/g, " ").toUpperCase()}
+        {stringReplacment(name)}
       </h2>
       <div
         className={`${styles.itemWrapper} ${
           isActive === name && styles.active
         }`}
       >
-        {/* <div className={styles.imgBox}>
-                  {/* <img src={reposImg[index]} alt={item.name} /> }
-                </div> */}
+        <ImageBox name={lowerCaseString(name)} alt={lowerCaseString(name)} />
         <ItemBox
           author={author}
           url={url}
