@@ -1,6 +1,7 @@
 .imageContainer {
   max-width: 350px;
   max-height: 350px;
+  margin: 0 auto;
 }
 
 .imageContainer img {
@@ -13,8 +14,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 350px;
-  height: 350px;
+  width: 300px;
+  height: 300px;
   border: 1px solid var(--border-color-dark);
   border-radius: 5px;
 }

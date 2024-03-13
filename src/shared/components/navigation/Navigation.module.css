@@ -189,7 +189,7 @@
   transition: all 0.3s ease-in-out;
 }
 
-@media (max-width: 725px) {
+@media (max-width: 1024px) {
   .mainNav {
     background-color: inherit;
   }

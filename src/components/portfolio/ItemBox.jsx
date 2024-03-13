@@ -31,11 +31,14 @@ export default function ItemBox({
         </div>
         <p>Main language: {language}</p>
         <div className={styles.topicBox}>
-          {topics.map((topic, index) => (
-            <span className={styles.topic} key={index}>
-              {capitalizeString(topic)}
-            </span>
-          ))}
+          {topics.map(
+            (topic, index) =>
+              topic.length > 0 && (
+                <span className={styles.topic} key={index}>
+                  {capitalizeString(topic)}
+                </span>
+              )
+          )}
         </div>
         <div className={styles.description}>
           <h4>Description:</h4>

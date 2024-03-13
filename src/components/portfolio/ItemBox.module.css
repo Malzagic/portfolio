@@ -48,12 +48,13 @@
 .topic {
   display: inline-flex;
   width: fit-content;
-  background-color: var(--border-color-dark);
+  background-color: var(--secondary-background-color-rgb-dark);
   padding: 0.25rem 0.75rem;
   margin: .5rem 1rem;
   border-radius: 5px;
   border: 1px solid var(--paragraph-color-dark);
   opacity: 0.90;
+  text-shadow: 0 0 2px var(--secondary-background-color-rgb-dark);
 }
 
 @keyframes showItems {
@@ -65,7 +66,7 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .itemBox {
     flex-direction: column;
     margin: 0 auto;
