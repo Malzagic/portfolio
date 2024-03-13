@@ -63,4 +63,8 @@
   .imgBox {
     justify-content: center;
   }
+
+  .active {
+    flex-direction: column;
+  }
 }

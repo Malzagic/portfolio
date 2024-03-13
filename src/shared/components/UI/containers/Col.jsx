@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import styles from "./Col.module.css";
 
-const Col = (props) => {
+export default function Col({ title, children }) {
   const [isActive, setIsActive] = useState(false);
 
   const hoverEffectAdd = () => {
@@ -20,11 +20,11 @@ const Col = (props) => {
       onMouseLeave={hoverEffectRemove}
     >
       <div className={`${styles.colRounded} ${isActive && styles.active}`}>
-        <h5 className={`${isActive ? styles.active : styles.title}`}>{props.title}</h5>
-        {props.children}
+        <h5 className={`${isActive ? styles.active : styles.title}`}>
+          {title}
+        </h5>
+        {children}
       </div>
     </div>
   );
-};
-
-export default Col;
+}

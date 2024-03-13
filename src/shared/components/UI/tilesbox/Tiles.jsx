@@ -1,15 +1,12 @@
 import React from "react";
 
-import './Tiles.css';
+import styles from "./Tiles.module.css";
 
-const Tiles = ({ title, text }) => {
-    return (
-        <div className="tiles-box">
-            <h3 className="tiles-title">{title}</h3>
-            <p className="tiles-text">{text}</p>
-        </div>
-    )
-
+export default function Tiles({ title, text }) {
+  return (
+    <div className={styles.box}>
+      <h3>{title}</h3>
+      <p>{text}</p>
+    </div>
+  );
 }
-
-export default Tiles;

@@ -49,7 +49,7 @@ export default function Portfolio() {
         const url = `https://www.pmdev.ovh/api/portfolio`;
         const response = await axios.get(url);
         const data = response.data;
-
+        console.log(data)
         setRepositories(data);
         setLoading(false);
         setIsError(false);
@@ -117,6 +117,7 @@ export default function Portfolio() {
               homepage={item.homepage}
               language={item.language}
               description={item.description}
+              topics={item.topics.map((topic) => topic)}
             ></Card>
           ))}
       </div>

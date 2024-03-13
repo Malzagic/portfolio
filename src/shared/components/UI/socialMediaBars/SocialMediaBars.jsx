@@ -5,7 +5,7 @@ import { FaFacebookF, FaGithub, FaLinkedinIn } from "react-icons/fa";
 
 import styles from "./SocialMediaBars.module.css";
 
-const SocialMediaBars = () => {
+export default function SocialMediaBars() {
   return (
     <ul className={styles.socialmediaBar}>
       <li className={styles.socialmediaLink}>
@@ -33,6 +33,4 @@ const SocialMediaBars = () => {
       </li>
     </ul>
   );
-};
-
-export default SocialMediaBars;
+}

@@ -1,19 +1,17 @@
 import React from "react";
 
-import './Wrapper.css';
+import styles from "./Wrapper.module.css";
 
-const Wrapper = (props) => {
+export default function Wrapper({ children }) {
   return (
     <>
-      <div className="bg-lines">
+      <div className={styles.bgLines}>
         <span></span>
         <span></span>
         <span></span>
         <span></span>
       </div>
-      <main className="wrapper">{props.children}</main>
+      <main className={styles.wrapper}>{children}</main>
     </>
-  )
+  );
 }
-
-export default Wrapper;

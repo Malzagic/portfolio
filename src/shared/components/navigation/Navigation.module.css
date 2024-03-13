@@ -1,4 +1,4 @@
-.main-nav {
+.mainNav {
   display: flex;
   flex-direction: column;
   position: fixed;
@@ -8,9 +8,10 @@
   height: 100%;
   margin: 0;
   padding: 0;
+  z-index: 100;
 }
 
-.main-nav.menu-active {
+.menuActive {
   width: 100vw;
   height: 100vh;
   margin: 0;
@@ -22,23 +23,20 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
-  transition: all .6s ease-out;
+  transition: all 0.6s ease-out;
 }
 
-.nav.nav-active {
+.navActive {
   display: flex;
   flex-direction: column;
   height: 100vh;
   background-color: var(--navigation-background-color-dark);
-  /* animation-name: burgerAnimation;
-  animation-duration: 1s;
-  animation-fill-mode: both; */
   z-index: 99;
   transform: translate(0);
-  transition: all .6s ease-out;
+  transition: all 0.6s ease-out;
 }
 
-.nav-image {
+.navImage {
   display: flex;
   flex-grow: 3;
   justify-content: center;
@@ -48,7 +46,7 @@
   border-bottom: 1px var(--border-color-dark) solid;
 }
 
-.nav-logo {
+.navLogo {
   max-width: 150px;
   max-height: 150px;
   position: relative;
@@ -61,7 +59,7 @@
   border-radius: 50%;
 }
 
-.nav-menu {
+.navMenu {
   display: flex;
   flex-grow: 15;
   flex-direction: column;
@@ -72,15 +70,17 @@
   border-bottom: 1px solid var(--border-color-dark);
 }
 
-.nav-link {
+.navLink {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  background-image: linear-gradient(to right,
-      var(--border-color-dark),
-      var(--border-color-dark) 50%,
-      var(--secondary-color-dark) 50%);
+  background-image: linear-gradient(
+    to right,
+    var(--border-color-dark),
+    var(--border-color-dark) 50%,
+    var(--secondary-color-dark) 50%
+  );
   background-size: 200% 100%;
   background-position: -100%;
   position: relative;
@@ -94,8 +94,8 @@
   margin: 0.5rem;
 }
 
-.nav-link::before {
-  content: '';
+.navLink::before {
+  content: "";
   background: var(--border-color-dark);
   display: block;
   position: absolute;
@@ -106,25 +106,25 @@
   transition: all 0.3s ease-in-out;
 }
 
-.nav-link:hover {
+.navLink:hover {
   background-position: 0;
 }
 
-.nav-link:active::before,
-.nav-link:focus {
+.navLink:active::before,
+.navLink:focus {
   background-position: 0;
 }
 
-.nav-link:hover::before {
+.navLink:hover::before {
   width: 100%;
 }
 
-.nav-link:active::before,
-.nav-link:focus::before {
+.navLink:active::before,
+.navLink:focus::before {
   width: 100%;
 }
 
-.nav-copyrights {
+.navCopyrights {
   display: flex;
   flex-grow: 1;
   justify-content: center;
@@ -133,11 +133,11 @@
   border-right: 1px solid var(--border-color-dark);
 }
 
-.copyright-title {
+.title {
   font-size: 0.8rem;
 }
 
-.burger-menu {
+.burgerMenu {
   display: none;
   flex-direction: column;
   justify-content: center;
@@ -151,14 +151,14 @@
   z-index: 100;
 }
 
-.burger-menu span:nth-child(1) {
+.burgerMenu span:nth-child(1) {
   position: absolute;
   width: 100%;
   height: 2px;
   background-color: #fff;
 }
 
-.burger-menu span:nth-child(2) {
+.burgerMenu span:nth-child(2) {
   position: absolute;
   top: 0;
   width: 100%;
@@ -166,7 +166,7 @@
   background-color: #fff;
 }
 
-.burger-menu span:nth-child(3) {
+.burgerMenu span:nth-child(3) {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -174,28 +174,23 @@
   background-color: #fff;
 }
 
-.burger-menu.toggler span:nth-child(1) {
+.toggler span:nth-child(1) {
   transform: rotate(45deg);
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
-.burger-menu.toggler span:nth-child(2) {
+.toggler span:nth-child(2) {
   visibility: hidden;
 }
 
-.burger-menu.toggler span:nth-child(3) {
+.toggler span:nth-child(3) {
   top: 18px;
   transform: rotate(-45deg);
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
-
 @media (max-width: 725px) {
-  .wrapper {
-    padding-left: 0;
-  }
-
-  .main-nav {
+  .mainNav {
     background-color: inherit;
   }
 
@@ -203,7 +198,7 @@
     transform: translate(-300px);
   }
 
-  .burger-menu {
+  .burgerMenu {
     display: flex;
   }
 }

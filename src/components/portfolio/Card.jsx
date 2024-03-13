@@ -16,6 +16,7 @@ export default function Card({
   homepage,
   language,
   description,
+  topics
 }) {
   return (
     <div className={styles.card} onClick={onClick}>
@@ -27,12 +28,14 @@ export default function Card({
           isActive === name && styles.active
         }`}
       >
+        {console.log(topics)}
         <ImageBox name={lowerCaseString(name)} alt={lowerCaseString(name)} />
         <ItemBox
           author={author}
           url={url}
           homepage={homepage}
           language={language}
+          topics={topics}
           description={description}
         />
       </div>

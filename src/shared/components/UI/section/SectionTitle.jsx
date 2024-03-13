@@ -2,7 +2,7 @@ import React from "react";
 
 import styles from "./SectionTitle.module.css";
 
-const SectionTitle = ({ title, style }) => {
+export default function SectionTitle({ title, style }) {
   return (
     <div
       className={
@@ -12,6 +12,4 @@ const SectionTitle = ({ title, style }) => {
       <h2 className={styles.titleTheme}>{title}</h2>
     </div>
   );
-};
-
-export default SectionTitle;
+}
