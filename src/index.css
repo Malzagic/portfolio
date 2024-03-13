@@ -34,9 +34,3 @@ body {
   position: absolute;
   top: 50%;
 }
-
-@media (max-width: 725px) {
-  .wrapper {
-    padding-left: 0;
-  }
-}
