@@ -38,6 +38,24 @@
   font-weight: 200;
 }
 
+.topicBox {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.topic {
+  display: inline-flex;
+  width: fit-content;
+  background-color: var(--border-color-dark);
+  padding: 0.25rem 0.75rem;
+  margin: .5rem 1rem;
+  border-radius: 5px;
+  border: 1px solid var(--paragraph-color-dark);
+  opacity: 0.90;
+}
+
 @keyframes showItems {
   from {
     opacity: 0;
@@ -60,5 +78,11 @@
   }
   .links {
     margin: 1rem auto;
+  }
+  .topicBox {
+    justify-content: center;
+  }
+  .description h4 {
+    padding-left: 0;
   }
 }

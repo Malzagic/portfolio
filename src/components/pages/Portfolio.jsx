@@ -32,9 +32,8 @@ export default function Portfolio() {
     ) {
       return;
     }
-    if (e.target.getAttribute("data-value")) {
-      repo = e.target.getAttribute("data-value");
-    }
+
+    repo = e.target.getAttribute("data-value");
 
     setIsActive(repo);
   };
@@ -49,7 +48,7 @@ export default function Portfolio() {
         const url = `https://www.pmdev.ovh/api/portfolio`;
         const response = await axios.get(url);
         const data = response.data;
-        console.log(data)
+
         setRepositories(data);
         setLoading(false);
         setIsError(false);

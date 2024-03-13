@@ -13,5 +13,6 @@
 }
 
 .text {
+    text-align: center;
     color: var(--paragraph-color-dark);
 }

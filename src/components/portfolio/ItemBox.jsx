@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "../../shared/components/UI/buttons/Button";
 
-import {capitalizeString} from "../../util/stringTools";
+import { capitalizeString } from "../../util/stringTools";
 import styles from "./ItemBox.module.css";
 
 export default function ItemBox({
@@ -10,7 +10,7 @@ export default function ItemBox({
   homepage,
   language,
   description,
-  topics
+  topics,
 }) {
   return (
     <div className={styles.itemBox}>
@@ -29,8 +29,14 @@ export default function ItemBox({
             Live
           </Button>
         </div>
-        <p>main language: {language}</p>
-        {topics.map((topic, index) => <p key={index}>{capitalizeString(topic)}</p>)}
+        <p>Main language: {language}</p>
+        <div className={styles.topicBox}>
+          {topics.map((topic, index) => (
+            <span className={styles.topic} key={index}>
+              {capitalizeString(topic)}
+            </span>
+          ))}
+        </div>
         <div className={styles.description}>
           <h4>Description:</h4>
           <p>{description}</p>

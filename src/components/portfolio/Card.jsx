@@ -16,11 +16,11 @@ export default function Card({
   homepage,
   language,
   description,
-  topics
+  topics,
 }) {
   return (
-    <div className={styles.card} onClick={onClick}>
-      <h2 data-value={name} className={styles.title}>
+    <div className={styles.card} onClick={onClick} data-value={name}>
+      <h2 className={styles.title} data-value={name}>
         {stringReplacment(name)}
       </h2>
       <div
@@ -28,7 +28,6 @@ export default function Card({
           isActive === name && styles.active
         }`}
       >
-        {console.log(topics)}
         <ImageBox name={lowerCaseString(name)} alt={lowerCaseString(name)} />
         <ItemBox
           author={author}

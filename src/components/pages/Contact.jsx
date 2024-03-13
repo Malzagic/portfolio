@@ -60,11 +60,10 @@ export default function Contact() {
       <div data-aos="fade-right" className={styles.textContainer}>
         <h2 className={styles.title}>Contant with me</h2>
         <p className={styles.text}>
-          Thank you for your interest in talking to me. If you need more
-          information or help, please do not hesitate to contact me. Complete
-          the form below with your name, surname, e-mail address and a short
-          message and I will respond to your inquiry immediately. Thank you in
-          advance for your message.
+          Please let me know if you need more information or help. Complete the
+          form below with your name, surname, e-mail address and a short message
+          and I will respond to your inquiry immediately. Thank you in advance
+          for your message.
         </p>
       </div>
       <FormData onSubmit={sendEmailHandler} />
