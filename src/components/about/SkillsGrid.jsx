@@ -24,7 +24,7 @@ import {
 } from "react-icons/si";
 import { VscJson } from "react-icons/vsc";
 
-import styles from "./SkillGrid.module.css"
+import styles from "./SkillsGrid.module.css"
 
 export default function SkillsGrid() {
   return (
