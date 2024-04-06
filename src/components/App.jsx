@@ -1,6 +1,7 @@
 import React, { Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+import ReactGA from 'react-ga';
 import Wrapper from "../shared/components/UI/containers/Wrapper";
 import Navigation from "../shared/components/navigation/Navigation";
 // import Home from "./pages/Home";
@@ -17,6 +18,8 @@ const Resume = React.lazy(() => import("./pages/Resume"));
 const Portfolio = React.lazy(() => import("./pages/Portfolio"));
 const Contact = React.lazy(() => import("./pages/Contact"));
 const NotFound = React.lazy(() => import("./pages/NotFound"));
+const TRACKING_ID = process.env.REACT_APP_GTAG_KEY; // OUR_TRACKING_ID
+ReactGA.initialize(TRACKING_ID);
 
 const App = () => {
   return (

@@ -4,7 +4,7 @@ import Section from "../../shared/components/UI/section/Section";
 import Container from "../../shared/components/UI/containers/Container";
 import Button from "../../shared/components/UI/buttons/Button";
 
-import styles from "./NotFound.module.css";
+// import styles from "./NotFound.module.css";
 
 export default function NotFound() {
   return (
