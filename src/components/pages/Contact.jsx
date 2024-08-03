@@ -18,7 +18,7 @@ export default function Contact() {
   const sendEmailHandler = async (formData) => {
     console.log(formData);
     try {
-      const url = "https://rest-api-server-y92f.onrender.com/contact";
+      const url = "https://rest-api-server-y92f.onrender.com/api/contact";
       // const url = "http://localhost:8000/api/contact"
       const options = {
         headers: {
