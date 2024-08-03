@@ -45,7 +45,7 @@ export default function Portfolio() {
       try {
         setLoading(true);
 
-        const url = `https://www.pmdev.ovh/api/portfolio`;
+        const url = `https://rest-api-server-y92f.onrender.com/portfolio`;
         const response = await axios.get(url);
         const data = response.data;
 
